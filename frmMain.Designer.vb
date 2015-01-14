@@ -28,9 +28,13 @@ Partial Class frmMain
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.cbUpdateSelect = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.lbPreview = New System.Windows.Forms.ListBox()
         Me.btnThunder = New System.Windows.Forms.Button()
         Me.wbCheck = New System.Windows.Forms.WebBrowser()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lvPreview = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,15 +97,6 @@ Partial Class frmMain
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "请选择剧集"
         '
-        'lbPreview
-        '
-        Me.lbPreview.FormattingEnabled = True
-        Me.lbPreview.ItemHeight = 12
-        Me.lbPreview.Location = New System.Drawing.Point(12, 198)
-        Me.lbPreview.Name = "lbPreview"
-        Me.lbPreview.Size = New System.Drawing.Size(381, 172)
-        Me.lbPreview.TabIndex = 10
-        '
         'btnThunder
         '
         Me.btnThunder.Location = New System.Drawing.Point(247, 376)
@@ -120,6 +115,40 @@ Partial Class frmMain
         Me.wbCheck.Size = New System.Drawing.Size(175, 139)
         Me.wbCheck.TabIndex = 12
         Me.wbCheck.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(88, 67)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(125, 12)
+        Me.Label3.TabIndex = 13
+        Me.Label3.Text = "Powered by NimitzDEV"
+        '
+        'lvPreview
+        '
+        Me.lvPreview.CheckBoxes = True
+        Me.lvPreview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.lvPreview.FullRowSelect = True
+        Me.lvPreview.Location = New System.Drawing.Point(12, 198)
+        Me.lvPreview.Name = "lvPreview"
+        Me.lvPreview.Size = New System.Drawing.Size(381, 172)
+        Me.lvPreview.TabIndex = 14
+        Me.lvPreview.UseCompatibleStateImageBehavior = False
+        Me.lvPreview.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "执行动作"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "剧集"
+        '
+        'ColumnHeader3
+        '
+        Me.ColumnHeader3.Text = "文件名"
+        Me.ColumnHeader3.Width = 250
         '
         'LogInSeperator1
         '
@@ -152,10 +181,11 @@ Partial Class frmMain
         '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 12!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(405, 397)
-        Me.Controls.Add(Me.lbPreview)
+        Me.Controls.Add(Me.lvPreview)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.wbCheck)
         Me.Controls.Add(Me.btnThunder)
         Me.Controls.Add(Me.Label2)
@@ -167,15 +197,15 @@ Partial Class frmMain
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
+        Me.MaximizeBox = false
+        Me.MinimizeBox = false
         Me.Name = "frmMain"
         Me.Text = "Form1"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents libtnStart As 字幕组追剧助手.LogInButtonWithProgress
@@ -184,8 +214,12 @@ Partial Class frmMain
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents cbUpdateSelect As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents lbPreview As System.Windows.Forms.ListBox
     Friend WithEvents btnThunder As System.Windows.Forms.Button
     Friend WithEvents wbCheck As System.Windows.Forms.WebBrowser
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lvPreview As System.Windows.Forms.ListView
+    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
 
 End Class

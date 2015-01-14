@@ -41,10 +41,14 @@ Public Class frmMain
     End Sub
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
+        tvInfoXml.Load(Application.StartupPath & "\tvseries.xml")
+        rootElement = tvInfoXml.SelectSingleNode("NimitzDEV")
+        siteInfoXml.Load(Application.StartupPath & "\sites.xml")
+        rootElement2 = siteInfoXml.SelectSingleNode("NimitzDEV")
         libtnStart.Enabled = False
         Me.Height = 192
         updateList.Clear()
-        lbPreview.Items.Clear()
+        lvPreview.Items.Clear()
         cbUpdateSelect.Items.Clear()
         allCount = tvInfoXml.SelectSingleNode("NimitzDEV").SelectNodes("media").Count
         libtnStart.Value = 0
@@ -64,6 +68,7 @@ Public Class frmMain
             nowChecking = 0
             Me.Refresh()
             If cbUpdateSelect.Items.Count = 0 Then
+                MsgBox("当前所有剧集为最新一集了，无需更新")
                 Exit Sub
             End If
             Me.Height = 436
@@ -127,19 +132,41 @@ Public Class frmMain
     End Sub
 
     Private Sub cbUpdateSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbUpdateSelect.SelectedIndexChanged
-        lbPreview.Items.Clear()
+        lvPreview.Items.Clear()
         For i = 1 To updateList.Count
             If Split(updateList(i), "/=/")(0) = cbUpdateSelect.Text Then
-                lbPreview.Items.Add(Split(updateList(i), "/=/")(1))
+                Dim lv As New ListViewItem()
+                lv.SubItems(0).Text = "下载"
+                lv.SubItems.Add(getReadableName(Split(updateList(i), "/=/")(1)))
+                lv.Tag = Split(updateList(i), "/=/")(2)
+                lv.Checked = True
+                lv.SubItems.Add(Split(updateList(i), "/=/")(1))
+                'lvPreview.Items.Add(Split(updateList(i), "/=/")(1))
+                lvPreview.Items.Add(lv)
             End If
         Next
     End Sub
 
-    Private Sub btnThunder_Click(sender As Object, e As EventArgs) Handles btnThunder.Click
-        For i = 1 To updateList.Count
-            If Split(updateList(i), "/=/")(0) = cbUpdateSelect.Text Then
-                thunderEng.AddTask(Split(updateList(i), "/=/")(2), "", media_path & "\", "", "", 1, 0, -1)
+    Private Function getReadableName(ByVal fileName As String)
+        Dim tmp2 As String
+        Dim regx As String
+        tmp2 = fileName
+        regx = System.Text.RegularExpressions.Regex.Match(fileName, "EP[0-9]+|E[0-9]+|第[0-9]+集|C[0-9]+").Value
+        If regx <> "" Then
+            If regx.Contains("第") = False And regx.Contains("集") = False Then
+                If regx.Contains("EP") Then regx = regx.Replace("EP", "第")
+                If regx.Contains("E") Then regx = regx.Replace("E", "第")
+                If regx.Contains("C") Then regx = regx.Replace("C", "第")
+                regx &= "集"
             End If
+            Return regx
+        End If
+        Return ""
+    End Function
+
+    Private Sub btnThunder_Click(sender As Object, e As EventArgs) Handles btnThunder.Click
+        For i = 1 To lvPreview.Items.Count
+            If lvPreview.Items(i - 1).Checked Then thunderEng.AddTask(lvPreview.Items(i - 1).Tag, "", media_path, "", "", 1, 0, -1)
         Next
         thunderEng.CommitTasks()
     End Sub
