@@ -43,8 +43,11 @@
 那么，里面的每个小标签又代表了什么呢？
 
 `<name>`标签，他储存的是剧集的名字，要注意的是，**不能重复哦**
+
 `<sitechecker>`标签，它储存了追剧资源网站的配置名称（后面会介绍）
+
 `<linkdata>`标签，他储存了剧集页面链接的一部分（后面会介绍）
+
 `<path>`标签，他储存了下载剧集的存放路径，前面的工作流程提到
 
 > 获得页面上的所有可下载连接，对比你已经下好的，看看缺了什么
@@ -114,8 +117,9 @@ http://www.ygdy8.net/html/tv/oumeitv/20150107/47075.html
 > 
 > 我们先打开两个页面对比一下
 > 
-> http://www.ygdy8.net/html/tv/oumeitv/**20150107/47075**.html
-> http://www.ygdy8.net/html/tv/oumeitv/**20141210/46850**.html
+> http://www.ygdy8.net/html/tv/oumeitv/20150107/47075.html
+>
+> http://www.ygdy8.net/html/tv/oumeitv/20141210/46850.html
 > 
 > 可以发现，加粗的部分是不同的，其他部分是相同的，那么以不同的部分为准，它的前面就是前缀，后面就是后缀，把它们分别放入 `<link_prefix>` 和 `<link_suffix>` 两个标签中
 > 
