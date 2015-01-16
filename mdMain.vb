@@ -18,6 +18,8 @@ Module mdMain
     Public site_loginFail_TruePart As String
     Public site_loginFail_FalsePart As String
     Public site_loginOK_TruePart As String
+    Public site_name As String
+    '----------------
     Public siteCfgReader As New Xml.XmlDocument
     Public Function getSiteInfo(ByVal mainSection As String, ByVal subSection As String) As String
         If FileExists(Application.StartupPath & "\sites.xml") = False Then

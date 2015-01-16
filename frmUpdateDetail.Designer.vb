@@ -29,12 +29,13 @@ Partial Class frmUpdateDetail
         Me.btnThunder = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbUpdateSelect = New System.Windows.Forms.ComboBox()
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'lvPreview
         '
         Me.lvPreview.CheckBoxes = True
-        Me.lvPreview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
+        Me.lvPreview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
         Me.lvPreview.FullRowSelect = True
         Me.lvPreview.Location = New System.Drawing.Point(4, 31)
         Me.lvPreview.Name = "lvPreview"
@@ -55,7 +56,7 @@ Partial Class frmUpdateDetail
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "文件名"
-        Me.ColumnHeader3.Width = 290
+        Me.ColumnHeader3.Width = 220
         '
         'btnThunder
         '
@@ -82,6 +83,11 @@ Partial Class frmUpdateDetail
         Me.cbUpdateSelect.Name = "cbUpdateSelect"
         Me.cbUpdateSelect.Size = New System.Drawing.Size(121, 20)
         Me.cbUpdateSelect.TabIndex = 15
+        '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "来源"
+        Me.ColumnHeader4.Width = 70
         '
         'frmUpdateDetail
         '
@@ -110,4 +116,5 @@ Partial Class frmUpdateDetail
     Friend WithEvents btnThunder As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents cbUpdateSelect As System.Windows.Forms.ComboBox
+    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
 End Class

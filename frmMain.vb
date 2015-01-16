@@ -83,6 +83,7 @@ Public Class frmMain
         site_requireLogin = rootElement2.SelectSingleNode(require).SelectSingleNode("requireLogin").InnerText
         site_scanRegularExp = rootElement2.SelectSingleNode(require).SelectSingleNode("scanRegularExp").InnerText
         site_scanSpliter = rootElement2.SelectSingleNode(require).SelectSingleNode("scanSpliter").InnerText
+        site_name = rootElement2.SelectSingleNode(require).SelectSingleNode("name").InnerText
     End Sub
 
     Private Sub wbCheck_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbCheck.DocumentCompleted
@@ -92,7 +93,8 @@ Public Class frmMain
         For i = 0 To UBound(gs)
             If gs(i) <> "" Then
                 If FileExists(media_path & "\" & Split(gs(i), site_scanSpliter)(site_fileNamePos)) = False Then
-                    updateList.Add(media_name & "/=/" & Split(gs(i), site_scanSpliter)(site_fileNamePos) & "/=/" & gs(i))
+                    '-- 名称 -- 文件名 -- 地址 -- 来源
+                    updateList.Add(media_name & "/=/" & Split(gs(i), site_scanSpliter)(site_fileNamePos) & "/=/" & gs(i) & "/=/" & site_name)
                     Debug.Print(gs(i))
                     isOK = True
                 End If

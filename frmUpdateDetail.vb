@@ -40,10 +40,10 @@
                 Dim lv As New ListViewItem()
                 lv.SubItems(0).Text = "下载"
                 lv.SubItems.Add(getReadableName(Split(updateList(i), "/=/")(1)))
+                lv.SubItems.Add(Split(updateList(i), "/=/")(1))
+                lv.SubItems.Add(Split(updateList(i), "/=/")(3))
                 lv.Tag = Split(updateList(i), "/=/")(2)
                 lv.Checked = True
-                lv.SubItems.Add(Split(updateList(i), "/=/")(1))
-                'lvPreview.Items.Add(Split(updateList(i), "/=/")(1))
                 lvPreview.Items.Add(lv)
             End If
         Next
