@@ -82,6 +82,12 @@
     <Compile Include="frmUpdate.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmUpdateDetail.Designer.vb">
+      <DependentUpon>frmUpdateDetail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdateDetail.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="loginthemecode.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdate.resx">
       <DependentUpon>frmUpdate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateDetail.resx">
+      <DependentUpon>frmUpdateDetail.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

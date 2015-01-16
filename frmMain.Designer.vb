@@ -26,15 +26,8 @@ Partial Class frmMain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.cbUpdateSelect = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnThunder = New System.Windows.Forms.Button()
         Me.wbCheck = New System.Windows.Forms.WebBrowser()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.lvPreview = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,32 +73,6 @@ Partial Class frmMain
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "软件更新"
         '
-        'cbUpdateSelect
-        '
-        Me.cbUpdateSelect.FormattingEnabled = True
-        Me.cbUpdateSelect.Location = New System.Drawing.Point(272, 172)
-        Me.cbUpdateSelect.Name = "cbUpdateSelect"
-        Me.cbUpdateSelect.Size = New System.Drawing.Size(121, 20)
-        Me.cbUpdateSelect.TabIndex = 8
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(201, 175)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 12)
-        Me.Label2.TabIndex = 9
-        Me.Label2.Text = "请选择剧集"
-        '
-        'btnThunder
-        '
-        Me.btnThunder.Location = New System.Drawing.Point(247, 376)
-        Me.btnThunder.Name = "btnThunder"
-        Me.btnThunder.Size = New System.Drawing.Size(146, 23)
-        Me.btnThunder.TabIndex = 11
-        Me.btnThunder.Text = "使用迅雷下载以上更新"
-        Me.btnThunder.UseVisualStyleBackColor = True
-        '
         'wbCheck
         '
         Me.wbCheck.Location = New System.Drawing.Point(20, 151)
@@ -124,31 +91,6 @@ Partial Class frmMain
         Me.Label3.Size = New System.Drawing.Size(125, 12)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Powered by NimitzDEV"
-        '
-        'lvPreview
-        '
-        Me.lvPreview.CheckBoxes = True
-        Me.lvPreview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
-        Me.lvPreview.FullRowSelect = True
-        Me.lvPreview.Location = New System.Drawing.Point(12, 198)
-        Me.lvPreview.Name = "lvPreview"
-        Me.lvPreview.Size = New System.Drawing.Size(381, 172)
-        Me.lvPreview.TabIndex = 14
-        Me.lvPreview.UseCompatibleStateImageBehavior = False
-        Me.lvPreview.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "执行动作"
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "剧集"
-        '
-        'ColumnHeader3
-        '
-        Me.ColumnHeader3.Text = "文件名"
-        Me.ColumnHeader3.Width = 250
         '
         'LogInSeperator1
         '
@@ -181,15 +123,11 @@ Partial Class frmMain
         '
         'frmMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 12!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(405, 397)
-        Me.Controls.Add(Me.lvPreview)
+        Me.ClientSize = New System.Drawing.Size(405, 147)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.wbCheck)
-        Me.Controls.Add(Me.btnThunder)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.cbUpdateSelect)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.LogInSeperator1)
@@ -212,14 +150,7 @@ End Sub
     Friend WithEvents LogInSeperator1 As 字幕组追剧助手.LogInSeperator
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
-    Friend WithEvents cbUpdateSelect As System.Windows.Forms.ComboBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents btnThunder As System.Windows.Forms.Button
     Friend WithEvents wbCheck As System.Windows.Forms.WebBrowser
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents lvPreview As System.Windows.Forms.ListView
-    Friend WithEvents ColumnHeader1 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader2 As System.Windows.Forms.ColumnHeader
-    Friend WithEvents ColumnHeader3 As System.Windows.Forms.ColumnHeader
 
 End Class

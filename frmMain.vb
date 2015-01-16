@@ -1,7 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
 Public Class frmMain
-    Dim updateList As New Collection
-    Dim thunderEng As New ThunderAgentLib.Agent
+
     '-------------
     Dim tvInfoXml As New Xml.XmlDocument
     Dim rootElement As Xml.XmlElement
@@ -10,26 +9,10 @@ Public Class frmMain
     Dim allCount As Integer = 0
     Dim seasonCount As Integer = 0
     Dim nowChecking As Integer = 0
-    '--------------
-    Dim media_name As String
-    Dim media_linkData As String
-    Dim media_siteChecker As String
-    Dim media_path As String
-    '--------------
-    Dim site_link_prefix As String
-    Dim site_link_suffix As String
-    Dim site_scanRegularExp As String
-    Dim site_scanSpliter As String
-    Dim site_fileNamePos As Integer
-    Dim site_requireLogin As Boolean
-    Dim site_loginLink As String
-    Dim site_loginFail_TruePart As String
-    Dim site_loginFail_FalsePart As String
-    Dim site_loginOK_TruePart As String
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
-        Me.Height = 192
         If FileExists(Application.StartupPath & "\tvseries.xml") = False Or FileExists(Application.StartupPath & "\sites.xml") = False Then
             MsgBox("配置文件缺失")
             libtnStart.Enabled = False
@@ -46,17 +29,11 @@ Public Class frmMain
         siteInfoXml.Load(Application.StartupPath & "\sites.xml")
         rootElement2 = siteInfoXml.SelectSingleNode("NimitzDEV")
         libtnStart.Enabled = False
-        Me.Height = 192
         updateList.Clear()
-        lvPreview.Items.Clear()
-        cbUpdateSelect.Items.Clear()
+        updateCategory.Clear()
         allCount = tvInfoXml.SelectSingleNode("NimitzDEV").SelectNodes("media").Count
         libtnStart.Value = 0
         libtnStart.Maximum = allCount
-        'For i = 0 To allCount - 1
-        '    updateDetail.Nodes.Add(tvInfoXml.SelectSingleNode("NimitzDEV").SelectNodes("media")(i).SelectSingleNode("name").InnerText)
-        '    libtnStart.Value = i + 1
-        'Next
         checkNextItem()
     End Sub
 
@@ -67,12 +44,12 @@ Public Class frmMain
             libtnStart.Enabled = True
             nowChecking = 0
             Me.Refresh()
-            If cbUpdateSelect.Items.Count = 0 Then
+            If updateCategory.Count = 0 Then
                 MsgBox("当前所有剧集为最新一集了，无需更新")
                 Exit Sub
             End If
-            Me.Height = 436
-            cbUpdateSelect.SelectedIndex = 0
+            frmUpdateDetail.ShowDialog(Me)
+            frmUpdateDetail.Dispose()
             Exit Sub
         End If
         prepareData()
@@ -116,59 +93,16 @@ Public Class frmMain
             If gs(i) <> "" Then
                 If FileExists(media_path & "\" & Split(gs(i), site_scanSpliter)(site_fileNamePos)) = False Then
                     updateList.Add(media_name & "/=/" & Split(gs(i), site_scanSpliter)(site_fileNamePos) & "/=/" & gs(i))
-                    'Debug.Print(media_name & "/=/" & Split(gs(i), site_scanSpliter)(site_fileNamePos) & "/=/" & gs(i))
-                    'composeDownloadData(gs(i), wbOpen.Tag)
                     Debug.Print(gs(i))
                     isOK = True
                 End If
             End If
         Next
         If isOK Then
-            cbUpdateSelect.Items.Add(media_name)
+            updateCategory.Add(media_name)
         End If
-        'Debug.Print(submitED2K)
         checkNextItem()
         If gs.Length = 0 Then Exit Sub
-    End Sub
-
-    Private Sub cbUpdateSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbUpdateSelect.SelectedIndexChanged
-        lvPreview.Items.Clear()
-        For i = 1 To updateList.Count
-            If Split(updateList(i), "/=/")(0) = cbUpdateSelect.Text Then
-                Dim lv As New ListViewItem()
-                lv.SubItems(0).Text = "下载"
-                lv.SubItems.Add(getReadableName(Split(updateList(i), "/=/")(1)))
-                lv.Tag = Split(updateList(i), "/=/")(2)
-                lv.Checked = True
-                lv.SubItems.Add(Split(updateList(i), "/=/")(1))
-                'lvPreview.Items.Add(Split(updateList(i), "/=/")(1))
-                lvPreview.Items.Add(lv)
-            End If
-        Next
-    End Sub
-
-    Private Function getReadableName(ByVal fileName As String)
-        Dim tmp2 As String
-        Dim regx As String
-        tmp2 = fileName
-        regx = System.Text.RegularExpressions.Regex.Match(fileName, "EP[0-9]+|E[0-9]+|第[0-9]+集|C[0-9]+").Value
-        If regx <> "" Then
-            If regx.Contains("第") = False And regx.Contains("集") = False Then
-                If regx.Contains("EP") Then regx = regx.Replace("EP", "第")
-                If regx.Contains("E") Then regx = regx.Replace("E", "第")
-                If regx.Contains("C") Then regx = regx.Replace("C", "第")
-                regx &= "集"
-            End If
-            Return regx
-        End If
-        Return ""
-    End Function
-
-    Private Sub btnThunder_Click(sender As Object, e As EventArgs) Handles btnThunder.Click
-        For i = 1 To lvPreview.Items.Count
-            If lvPreview.Items(i - 1).Checked Then thunderEng.AddTask(lvPreview.Items(i - 1).Tag, "", media_path, "", "", 1, 0, -1)
-        Next
-        thunderEng.CommitTasks()
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
