@@ -67,7 +67,7 @@ Partial Class frmTVMgr
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 14
-        Me.btnSave.Text = "保存"
+        Me.btnSave.Text = "更新信息"
         Me.btnSave.UseVisualStyleBackColor = True
         '
         'btnPathSel
@@ -116,7 +116,7 @@ Partial Class frmTVMgr
         '
         Me.tbResName.Location = New System.Drawing.Point(74, 14)
         Me.tbResName.Name = "tbResName"
-        Me.tbResName.Size = New System.Drawing.Size(121, 21)
+        Me.tbResName.Size = New System.Drawing.Size(224, 21)
         Me.tbResName.TabIndex = 8
         '
         'Label4
@@ -139,10 +139,11 @@ Partial Class frmTVMgr
         '
         'cbSelecter
         '
+        Me.cbSelecter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbSelecter.FormattingEnabled = True
         Me.cbSelecter.Location = New System.Drawing.Point(74, 41)
         Me.cbSelecter.Name = "cbSelecter"
-        Me.cbSelecter.Size = New System.Drawing.Size(121, 20)
+        Me.cbSelecter.Size = New System.Drawing.Size(224, 20)
         Me.cbSelecter.TabIndex = 5
         '
         'GroupBox1
@@ -168,7 +169,7 @@ Partial Class frmTVMgr
         '
         Me.btnAdd.Location = New System.Drawing.Point(179, 171)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
+        Me.btnAdd.Size = New System.Drawing.Size(111, 23)
         Me.btnAdd.TabIndex = 2
         Me.btnAdd.Text = "添加追剧"
         Me.btnAdd.UseVisualStyleBackColor = True

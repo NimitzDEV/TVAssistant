@@ -9,6 +9,7 @@
     End Sub
 
     Private Sub loader()
+        gb.Enabled = False
         lbAll.Items.Clear()
         cbSelecter.Items.Clear()
         tvInfoXml.Load(Application.StartupPath & "\tvseries.xml")
