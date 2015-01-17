@@ -76,6 +76,12 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmTVMgr.Designer.vb">
+      <DependentUpon>frmTVMgr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmTVMgr.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmUpdate.Designer.vb">
       <DependentUpon>frmUpdate.vb</DependentUpon>
     </Compile>
@@ -92,6 +98,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="mdMain.vb" />
+    <Compile Include="mdSitesOpr.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -111,6 +118,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTVMgr.resx">
+      <DependentUpon>frmTVMgr.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdate.resx">
       <DependentUpon>frmUpdate.vb</DependentUpon>

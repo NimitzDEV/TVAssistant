@@ -22,6 +22,7 @@ Partial Class frmMain
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
@@ -30,13 +31,14 @@ Partial Class frmMain
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
+        Me.btnAddRes = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.字幕组追剧助手.My.Resources.Resources.main
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(12, 7)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(72, 72)
@@ -49,14 +51,14 @@ Partial Class frmMain
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(90, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(269, 36)
+        Me.Label1.Size = New System.Drawing.Size(89, 12)
         Me.Label1.TabIndex = 1
-        Me.Label1.Text = "目前为测试版，我还没写好一体化的管理工具。。" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "so,使用方法先查看我写好的使用方法" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "→_→"
+        Me.Label1.Text = "欢迎使用本工具"
         '
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(340, 67)
+        Me.LinkLabel1.Location = New System.Drawing.Point(185, 12)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(53, 12)
         Me.LinkLabel1.TabIndex = 6
@@ -66,7 +68,7 @@ Partial Class frmMain
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(281, 67)
+        Me.LinkLabel2.Location = New System.Drawing.Point(244, 12)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(53, 12)
         Me.LinkLabel2.TabIndex = 7
@@ -86,7 +88,7 @@ Partial Class frmMain
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(88, 67)
+        Me.Label3.Location = New System.Drawing.Point(268, 67)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(125, 12)
         Me.Label3.TabIndex = 13
@@ -121,11 +123,21 @@ Partial Class frmMain
         Me.libtnStart.Text = "准备就绪"
         Me.libtnStart.Value = 100
         '
+        'btnAddRes
+        '
+        Me.btnAddRes.Location = New System.Drawing.Point(318, 32)
+        Me.btnAddRes.Name = "btnAddRes"
+        Me.btnAddRes.Size = New System.Drawing.Size(75, 23)
+        Me.btnAddRes.TabIndex = 14
+        Me.btnAddRes.Text = "追剧管理"
+        Me.btnAddRes.UseVisualStyleBackColor = True
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(405, 147)
+        Me.Controls.Add(Me.btnAddRes)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.wbCheck)
         Me.Controls.Add(Me.LinkLabel2)
@@ -152,5 +164,6 @@ End Sub
     Friend WithEvents LinkLabel2 As System.Windows.Forms.LinkLabel
     Friend WithEvents wbCheck As System.Windows.Forms.WebBrowser
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents btnAddRes As System.Windows.Forms.Button
 
 End Class

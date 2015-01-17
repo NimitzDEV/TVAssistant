@@ -29,4 +29,8 @@ Module mdMain
         siteCfgReader.Load(Application.StartupPath & "\sites.xml")
         Return siteCfgReader.SelectSingleNode("NimitzDEV").SelectSingleNode(mainSection).SelectSingleNode(subSection).InnerText
     End Function
+
+    Public Function cdataPhrase(ByVal input As String) As String
+        Return "<![CDATA[" & input & "]]>"
+    End Function
 End Module

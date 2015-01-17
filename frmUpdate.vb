@@ -13,11 +13,16 @@
         splitPageString()
     End Sub
     Private Sub splitPageString()
-        docString = New System.IO.StreamReader(wbStart.DocumentStream, System.Text.Encoding.Default).ReadToEnd
-        versionString = Split(docString, "≡")(1).Trim
-        updateString = Split(docString, "≡")(2).Trim
-        linkString = Split(docString, "≡")(3).Trim
-        detectUpdate()
+        Try
+            docString = New System.IO.StreamReader(wbStart.DocumentStream, System.Text.Encoding.Default).ReadToEnd
+            versionString = Split(docString, "≡")(1).Trim
+            updateString = Split(docString, "≡")(2).Trim
+            linkString = Split(docString, "≡")(3).Trim
+            detectUpdate()
+        Catch ex As Exception
+            MsgBox("数据接收错误")
+            Me.Close()
+        End Try
     End Sub
     Private Sub detectUpdate()
         If isNew() = False Then

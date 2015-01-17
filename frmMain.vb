@@ -37,7 +37,6 @@ Public Class frmMain
         checkNextItem()
     End Sub
 
-
     Private Sub checkNextItem()
         If nowChecking = allCount Then
             libtnStart.Text = "再来一次"
@@ -72,7 +71,7 @@ Public Class frmMain
         Return rootElement.SelectNodes("media")(nowChecking).SelectSingleNode(require).InnerText
     End Function
 
-    Private Sub getSiteInfo(ByVal require As String)
+    Public Sub getSiteInfo(ByVal require As String)
         site_fileNamePos = rootElement2.SelectSingleNode(require).SelectSingleNode("fileNamePos").InnerText
         site_link_prefix = rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText
         site_link_suffix = rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText
@@ -86,6 +85,7 @@ Public Class frmMain
         site_name = rootElement2.SelectSingleNode(require).SelectSingleNode("name").InnerText
     End Sub
 
+
     Private Sub wbCheck_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbCheck.DocumentCompleted
         Dim isOK As Boolean = False
         If wbCheck.ReadyState <> WebBrowserReadyState.Complete Then Exit Sub
@@ -93,8 +93,8 @@ Public Class frmMain
         For i = 0 To UBound(gs)
             If gs(i) <> "" Then
                 If FileExists(media_path & "\" & Split(gs(i), site_scanSpliter)(site_fileNamePos)) = False Then
-                    '-- 名称 -- 文件名 -- 地址 -- 来源
-                    updateList.Add(media_name & "/=/" & Split(gs(i), site_scanSpliter)(site_fileNamePos) & "/=/" & gs(i) & "/=/" & site_name)
+                    '-- 名称 -- 文件名 -- 地址 -- 来源 -- SC
+                    updateList.Add(media_name & "/=/" & Split(gs(i), site_scanSpliter)(site_fileNamePos) & "/=/" & gs(i) & "/=/" & site_name & "/=/" & media_siteChecker)
                     Debug.Print(gs(i))
                     isOK = True
                 End If
@@ -113,5 +113,10 @@ Public Class frmMain
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         frmUpdate.ShowDialog(Me)
+    End Sub
+
+    Private Sub btnAddRes_Click(sender As Object, e As EventArgs) Handles btnAddRes.Click
+        frmTVMgr.ShowDialog(Me)
+        frmTVMgr.Dispose()
     End Sub
 End Class
