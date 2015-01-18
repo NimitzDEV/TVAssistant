@@ -23,6 +23,8 @@ Partial Class frmTVMgr
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gb = New System.Windows.Forms.GroupBox()
+        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
+        Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnPathSel = New System.Windows.Forms.Button()
         Me.tbPath = New System.Windows.Forms.TextBox()
@@ -35,10 +37,8 @@ Partial Class frmTVMgr
         Me.cbSelecter = New System.Windows.Forms.ComboBox()
         Me.fbdPath = New System.Windows.Forms.FolderBrowserDialog()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lbAll = New System.Windows.Forms.ListBox()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.btnDelete = New System.Windows.Forms.Button()
-        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
+        Me.lbAll = New System.Windows.Forms.ListBox()
         Me.gb.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -60,10 +60,35 @@ Partial Class frmTVMgr
         Me.gb.Enabled = False
         Me.gb.Location = New System.Drawing.Point(179, 12)
         Me.gb.Name = "gb"
-        Me.gb.Size = New System.Drawing.Size(304, 210)
+        Me.gb.Size = New System.Drawing.Size(304, 205)
         Me.gb.TabIndex = 5
         Me.gb.TabStop = False
         Me.gb.Text = "追剧信息"
+        '
+        'LogInSeperator1
+        '
+        Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
+        Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
+        Me.LogInSeperator1.Location = New System.Drawing.Point(17, 119)
+        Me.LogInSeperator1.Name = "LogInSeperator1"
+        Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.LogInSeperator1.Size = New System.Drawing.Size(281, 20)
+        Me.LogInSeperator1.TabIndex = 16
+        Me.LogInSeperator1.Text = "LogInSeperator1"
+        Me.LogInSeperator1.Thickness = 1.0!
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(79, Byte), Integer))
+        Me.btnDelete.FlatAppearance.BorderSize = 0
+        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(17, 172)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(281, 23)
+        Me.btnDelete.TabIndex = 15
+        Me.btnDelete.Text = "删除这个追剧"
+        Me.btnDelete.UseVisualStyleBackColor = False
         '
         'btnSave
         '
@@ -71,7 +96,7 @@ Partial Class frmTVMgr
         Me.btnSave.FlatAppearance.BorderSize = 0
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(17, 145)
+        Me.btnSave.Location = New System.Drawing.Point(17, 143)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(281, 23)
         Me.btnSave.TabIndex = 14
@@ -160,19 +185,10 @@ Partial Class frmTVMgr
         Me.GroupBox1.Controls.Add(Me.lbAll)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(161, 210)
+        Me.GroupBox1.Size = New System.Drawing.Size(161, 205)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "追剧列表"
-        '
-        'lbAll
-        '
-        Me.lbAll.FormattingEnabled = True
-        Me.lbAll.ItemHeight = 12
-        Me.lbAll.Location = New System.Drawing.Point(6, 20)
-        Me.lbAll.Name = "lbAll"
-        Me.lbAll.Size = New System.Drawing.Size(149, 148)
-        Me.lbAll.TabIndex = 1
         '
         'btnAdd
         '
@@ -180,43 +196,27 @@ Partial Class frmTVMgr
         Me.btnAdd.FlatAppearance.BorderSize = 0
         Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.Location = New System.Drawing.Point(6, 177)
+        Me.btnAdd.Location = New System.Drawing.Point(6, 172)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(149, 23)
         Me.btnAdd.TabIndex = 2
         Me.btnAdd.Text = "添加追剧"
         Me.btnAdd.UseVisualStyleBackColor = False
         '
-        'btnDelete
+        'lbAll
         '
-        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(217, Byte), Integer), CType(CType(83, Byte), Integer), CType(CType(79, Byte), Integer))
-        Me.btnDelete.FlatAppearance.BorderSize = 0
-        Me.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDelete.ForeColor = System.Drawing.Color.White
-        Me.btnDelete.Location = New System.Drawing.Point(17, 177)
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(281, 23)
-        Me.btnDelete.TabIndex = 15
-        Me.btnDelete.Text = "删除这个追剧"
-        Me.btnDelete.UseVisualStyleBackColor = False
-        '
-        'LogInSeperator1
-        '
-        Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
-        Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
-        Me.LogInSeperator1.Location = New System.Drawing.Point(17, 119)
-        Me.LogInSeperator1.Name = "LogInSeperator1"
-        Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.LogInSeperator1.Size = New System.Drawing.Size(281, 20)
-        Me.LogInSeperator1.TabIndex = 16
-        Me.LogInSeperator1.Text = "LogInSeperator1"
-        Me.LogInSeperator1.Thickness = 1.0!
+        Me.lbAll.FormattingEnabled = True
+        Me.lbAll.ItemHeight = 12
+        Me.lbAll.Location = New System.Drawing.Point(6, 18)
+        Me.lbAll.Name = "lbAll"
+        Me.lbAll.Size = New System.Drawing.Size(149, 148)
+        Me.lbAll.TabIndex = 1
         '
         'frmTVMgr
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(494, 228)
+        Me.ClientSize = New System.Drawing.Size(494, 227)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gb)
         Me.MaximizeBox = False

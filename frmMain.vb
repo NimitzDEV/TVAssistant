@@ -1,4 +1,5 @@
 ﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
+Imports System.Text.RegularExpressions
 Public Class frmMain
 
     '-------------
@@ -17,6 +18,7 @@ Public Class frmMain
             MsgBox("配置文件缺失")
             libtnStart.Enabled = False
         End If
+
     End Sub
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
@@ -70,12 +72,32 @@ Public Class frmMain
     Private Sub wbCheck_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbCheck.DocumentCompleted
         Dim isOK As Boolean = False
         If wbCheck.ReadyState <> WebBrowserReadyState.Complete Then Exit Sub
+
+        If site_requireLogin Then
+            If Regex.IsMatch(getRightText(wbCheck), site_loginFail_FalsePart) = False And Regex.IsMatch(getRightText(wbCheck), site_loginFail_TruePart) = True Then
+                Dim msgResult As MsgBoxResult
+                msgResult = MsgBox("以下的追剧源需要进行会员登录" & vbCrLf & " - " & site_name & vbCrLf & "点击 确定 进行登录" & vbCrLf & "点击 取消 放弃登录并跳过检测该剧", vbOKCancel)
+                If msgResult = vbOK Then
+                    frmLogin.ShowDialog(Me)
+                    frmLogin.Dispose()
+                    nowChecking -= 1
+                    checkNextItem()
+                ElseIf msgResult = vbCancel Then
+                    checkNextItem()
+                End If
+                Exit Sub
+            End If
+        End If
+
+
         Dim gs() As String = (From mt As HtmlElement In wbCheck.Document.Links Select System.Text.RegularExpressions.Regex.Match(mt.OuterHtml, site_scanRegularExp).Value).ToArray
         For i = 0 To UBound(gs)
             If gs(i) <> "" Then
-                If FileExists(media_path & "\" & Split(gs(i), site_scanSpliter)(site_fileNamePos)) = False Then
+                Dim filename As String
+                filename = Split(gs(i), site_scanSpliter)(site_fileNamePos)
+                If FileExists(media_path & "\" & filename) = False Then
                     '-- 名称 -- 文件名 -- 地址 -- 来源 -- SC
-                    updateList.Add(media_name & "/=/" & Split(gs(i), site_scanSpliter)(site_fileNamePos) & "/=/" & gs(i) & "/=/" & site_name & "/=/" & media_siteChecker)
+                    updateList.Add(media_name & "/=/" & filename & "/=/" & gs(i) & "/=/" & site_name & "/=/" & media_siteChecker)
                     Debug.Print(gs(i))
                     isOK = True
                 End If
@@ -101,4 +123,20 @@ Public Class frmMain
         frmTVMgr.ShowDialog(Me)
         frmTVMgr.Dispose()
     End Sub
+
+
+    Private Sub wbCheck_ProgressChanged(sender As Object, e As WebBrowserProgressChangedEventArgs) Handles wbCheck.ProgressChanged
+        If e.CurrentProgress > 0 And e.MaximumProgress > 0 Then
+            Try
+                pbSub.Maximum = e.MaximumProgress
+                pbSub.Value = e.CurrentProgress
+            Catch ex As Exception
+                pbSub.Value = 0
+            End Try
+        ElseIf wbCheck.ReadyState = WebBrowserReadyState.Complete Then
+            pbSub.Value = pbSub.Maximum
+        End If
+    End Sub
+
+
 End Class

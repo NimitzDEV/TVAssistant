@@ -18,6 +18,7 @@ Module mdMain
     Public site_loginFail_TruePart As String
     Public site_loginFail_FalsePart As String
     Public site_loginOK_TruePart As String
+    Public site_loginOK_FalsePart As String
     Public site_name As String
     Public site_listlink As String
     Public site_xmlName As String
@@ -37,10 +38,11 @@ Module mdMain
         site_fileNamePos = rootElement2.SelectSingleNode(require).SelectSingleNode("fileNamePos").InnerText
         site_link_prefix = rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText
         site_link_suffix = rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText
-        site_loginFail_FalsePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_FalsePart").InnerText
-        site_loginFail_TruePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_TruePart").InnerText
+        site_loginFail_FalsePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_FalseRegex").InnerText
+        site_loginFail_TruePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_TrueRegex").InnerText
         site_loginLink = rootElement2.SelectSingleNode(require).SelectSingleNode("loginLink").InnerText
-        site_loginOK_TruePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginOK_TruePart").InnerText
+        site_loginOK_TruePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginOK_TrueRegex").InnerText
+        site_loginOK_FalsePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginOK_FalseRegex").InnerText
         site_requireLogin = rootElement2.SelectSingleNode(require).SelectSingleNode("requireLogin").InnerText
         site_scanRegularExp = rootElement2.SelectSingleNode(require).SelectSingleNode("scanRegularExp").InnerText
         site_scanSpliter = rootElement2.SelectSingleNode(require).SelectSingleNode("scanSpliter").InnerText
@@ -49,4 +51,9 @@ Module mdMain
         site_scanExclude = rootElement2.SelectSingleNode(require).SelectSingleNode("scanExclude").InnerText
         site_xmlName = require
     End Sub
+
+    Public Function getRightText(ByVal wb As WebBrowser) As String
+        Dim reader As New System.IO.StreamReader(wb.DocumentStream, System.Text.Encoding.GetEncoding(wb.Document.Encoding))
+        Return reader.ReadToEnd
+    End Function
 End Module

@@ -22,43 +22,23 @@ Partial Class frmMain
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.wbCheck = New System.Windows.Forms.WebBrowser()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
-        Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
         Me.btnAddRes = New System.Windows.Forms.Button()
+        Me.pbSub = New System.Windows.Forms.ProgressBar()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
+        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 7)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(72, 72)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(90, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 12)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "欢迎使用本工具"
         '
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(185, 12)
+        Me.LinkLabel1.Location = New System.Drawing.Point(176, 43)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(53, 12)
         Me.LinkLabel1.TabIndex = 6
@@ -68,7 +48,7 @@ Partial Class frmMain
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(244, 12)
+        Me.LinkLabel2.Location = New System.Drawing.Point(234, 43)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(53, 12)
         Me.LinkLabel2.TabIndex = 7
@@ -77,34 +57,60 @@ Partial Class frmMain
         '
         'wbCheck
         '
-        Me.wbCheck.Location = New System.Drawing.Point(20, 151)
+        Me.wbCheck.Location = New System.Drawing.Point(566, 295)
         Me.wbCheck.MinimumSize = New System.Drawing.Size(20, 20)
         Me.wbCheck.Name = "wbCheck"
         Me.wbCheck.ScriptErrorsSuppressed = True
-        Me.wbCheck.Size = New System.Drawing.Size(175, 139)
+        Me.wbCheck.Size = New System.Drawing.Size(175, 44)
         Me.wbCheck.TabIndex = 12
         Me.wbCheck.Visible = False
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(268, 67)
+        Me.Label3.Location = New System.Drawing.Point(272, 176)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(125, 12)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Powered by NimitzDEV"
         '
-        'LogInSeperator1
+        'btnAddRes
         '
-        Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
-        Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
-        Me.LogInSeperator1.Location = New System.Drawing.Point(90, 51)
-        Me.LogInSeperator1.Name = "LogInSeperator1"
-        Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.LogInSeperator1.Size = New System.Drawing.Size(303, 20)
-        Me.LogInSeperator1.TabIndex = 5
-        Me.LogInSeperator1.Text = "LogInSeperator1"
-        Me.LogInSeperator1.Thickness = 1.0!
+        Me.btnAddRes.Location = New System.Drawing.Point(236, 124)
+        Me.btnAddRes.Name = "btnAddRes"
+        Me.btnAddRes.Size = New System.Drawing.Size(161, 23)
+        Me.btnAddRes.TabIndex = 14
+        Me.btnAddRes.Text = "追剧管理"
+        Me.btnAddRes.UseVisualStyleBackColor = True
+        '
+        'pbSub
+        '
+        Me.pbSub.Location = New System.Drawing.Point(12, 224)
+        Me.pbSub.Name = "pbSub"
+        Me.pbSub.Size = New System.Drawing.Size(385, 23)
+        Me.pbSub.TabIndex = 15
+        Me.pbSub.Value = 100
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.字幕组追剧助手.My.Resources.Resources.main_new
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 20)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(158, 127)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Location = New System.Drawing.Point(176, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(143, 12)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "欢迎使用字幕组追剧助手~"
         '
         'libtnStart
         '
@@ -113,51 +119,55 @@ Partial Class frmMain
         Me.libtnStart.BorderColour = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
         Me.libtnStart.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.libtnStart.HoverColour = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
-        Me.libtnStart.Location = New System.Drawing.Point(12, 90)
+        Me.libtnStart.Location = New System.Drawing.Point(12, 191)
         Me.libtnStart.Maximum = 100
         Me.libtnStart.Name = "libtnStart"
         Me.libtnStart.PressedColour = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.libtnStart.ProgressColour = System.Drawing.Color.ForestGreen
-        Me.libtnStart.Size = New System.Drawing.Size(381, 50)
+        Me.libtnStart.ProgressColour = System.Drawing.Color.DodgerBlue
+        Me.libtnStart.Size = New System.Drawing.Size(385, 50)
         Me.libtnStart.TabIndex = 3
-        Me.libtnStart.Text = "准备就绪"
+        Me.libtnStart.Text = "点我检查更新"
         Me.libtnStart.Value = 100
         '
-        'btnAddRes
+        'LogInSeperator1
         '
-        Me.btnAddRes.Location = New System.Drawing.Point(318, 32)
-        Me.btnAddRes.Name = "btnAddRes"
-        Me.btnAddRes.Size = New System.Drawing.Size(75, 23)
-        Me.btnAddRes.TabIndex = 14
-        Me.btnAddRes.Text = "追剧管理"
-        Me.btnAddRes.UseVisualStyleBackColor = True
+        Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
+        Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
+        Me.LogInSeperator1.Location = New System.Drawing.Point(12, 153)
+        Me.LogInSeperator1.Name = "LogInSeperator1"
+        Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.LogInSeperator1.Size = New System.Drawing.Size(385, 20)
+        Me.LogInSeperator1.TabIndex = 5
+        Me.LogInSeperator1.Text = "LogInSeperator1"
+        Me.LogInSeperator1.Thickness = 1.0!
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(405, 147)
+        Me.ClientSize = New System.Drawing.Size(410, 255)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.libtnStart)
+        Me.Controls.Add(Me.pbSub)
         Me.Controls.Add(Me.btnAddRes)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.wbCheck)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.LogInSeperator1)
-        Me.Controls.Add(Me.libtnStart)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.MaximizeBox = false
-        Me.MinimizeBox = false
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmMain"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
-        CType(Me.PictureBox1,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
-        Me.PerformLayout
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-End Sub
+    End Sub
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents libtnStart As 字幕组追剧助手.LogInButtonWithProgress
     Friend WithEvents LogInSeperator1 As 字幕组追剧助手.LogInSeperator
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
@@ -165,5 +175,7 @@ End Sub
     Friend WithEvents wbCheck As System.Windows.Forms.WebBrowser
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnAddRes As System.Windows.Forms.Button
+    Friend WithEvents pbSub As System.Windows.Forms.ProgressBar
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 
 End Class

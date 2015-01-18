@@ -63,9 +63,9 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
-        Friend ReadOnly Property main() As System.Drawing.Bitmap
+        Friend ReadOnly Property main_new() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("main", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("main_new", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

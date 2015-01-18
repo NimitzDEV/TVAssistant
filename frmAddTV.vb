@@ -1,9 +1,11 @@
-﻿Public Class frmAddTV
+﻿Imports System.Text.RegularExpressions.Regex
+Public Class frmAddTV
     Dim tvInfoXml As New Xml.XmlDocument
     Dim rootElement As Xml.XmlElement
     Dim allCount As Integer
     Dim siteInfoXML As New Xml.XmlDocument
     Dim rootElement2 As Xml.XmlElement
+    Dim loginIsConfirm As Boolean
     Private Sub frmAddTV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Top = 0
         Me.Left = 0
@@ -37,7 +39,12 @@
     Private Sub cbSelecter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSelecter.SelectedIndexChanged
         Debug.Print(cbSelecter.SelectedIndex)
         getSiteInfo(rootElement2.ChildNodes(cbSelecter.SelectedIndex).Name, rootElement2)
-        wbOperate.Navigate(site_listlink)
+        If site_requireLogin Then
+            wbOperate.Navigate(site_loginLink)
+        Else
+            wbOperate.Navigate(site_listlink)
+        End If
+
     End Sub
 
     Private Sub btnNavBack_Click(sender As Object, e As EventArgs) Handles btnNavBack.Click
@@ -55,16 +62,41 @@
 
     Private Sub summarizeData(ByVal linkdata As String, ByVal title As String)
         tbPath.Text = ""
+        tbLinkData.Text = ""
+        tbResName.Text = ""
         gb.Enabled = False
         lbStatus.Text = "未检测到可用追剧信息"
         lbStatus.ForeColor = Color.OrangeRed
+        If site_requireLogin And Not loginIsConfirm Then
+            lbStatus.Text = "当前追剧源需要进行登录"
+            If IIf(site_loginFail_FalsePart = "", False, IsMatch(getRightText(wbOperate), site_loginFail_FalsePart)) = False And IIf(site_loginFail_TruePart = "", True, IsMatch(getRightText(wbOperate), site_loginFail_TruePart)) = True Then
+                loginIsConfirm = False
+                Exit Sub
+            End If
+            If loginIsConfirm Then Exit Sub
+            If IIf(site_loginOK_FalsePart = "", False, IsMatch(getRightText(wbOperate), site_loginOK_FalsePart)) = False And IIf(site_loginOK_TruePart = "", True, IsMatch(getRightText(wbOperate), site_loginOK_TruePart)) = True Then
+                lbStatus.Text = "登录成功"
+                loginIsConfirm = True
+                wbOperate.Navigate(site_listlink)
+                Exit Sub
+            End If
+        End If
+        If site_requireLogin Then
+            If IIf(site_loginFail_FalsePart = "", False, IsMatch(getRightText(wbOperate), site_loginFail_FalsePart)) = False And IIf(site_loginFail_TruePart = "", True, IsMatch(getRightText(wbOperate), site_loginFail_TruePart)) = True Then
+                loginIsConfirm = False
+                lbStatus.Text = "当前追剧源需要进行登录"
+                Exit Sub
+            End If
+        End If
+
         If linkdata = site_listlink Then
             Exit Sub
         End If
+
         If Mid(linkdata, 1, Len(site_link_prefix)) = site_link_prefix And Mid(linkdata, Len(linkdata) - Len(site_link_suffix) + 1, Len(site_link_suffix)) = site_link_suffix Then
             tbResName.Text = title
             tbLinkData.Text = Mid(linkdata, Len(site_link_prefix) + 1, Len(linkdata) - Len(site_link_suffix) - Len(site_link_prefix))
-            If System.Text.RegularExpressions.Regex.IsMatch(tbLinkData.Text, site_scanExclude) Then
+            If IsMatch(tbLinkData.Text, site_scanExclude) Then
                 Exit Sub
             End If
             If isDuplicate(tbLinkData.Text) Then
@@ -74,6 +106,7 @@
                 Exit Sub
             End If
         End If
+        If tbResName.Text = "" Or tbLinkData.Text = "" Then Exit Sub
         gb.Enabled = True
         lbStatus.Text = "检测到可用追剧信息"
         lbStatus.ForeColor = Color.Green
@@ -83,8 +116,13 @@
     Private Sub wbOperate_ProgressChanged(sender As Object, e As WebBrowserProgressChangedEventArgs) Handles wbOperate.ProgressChanged
         If e.CurrentProgress > 0 And e.MaximumProgress > 0 Then
             lbb.Text = "检测中"
-            pbB.Maximum = e.MaximumProgress
-            pbB.Value = e.CurrentProgress
+
+            Try
+                pbB.Maximum = e.MaximumProgress
+                pbB.Value = e.CurrentProgress
+            Catch ex As Exception
+                pbB.Value = 0
+            End Try
         ElseIf wbOperate.ReadyState = WebBrowserReadyState.Complete Then
             lbb.Text = "完成"
             pbB.Value = pbB.Maximum
