@@ -28,8 +28,8 @@ Partial Class frmMain
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnAddRes = New System.Windows.Forms.Button()
         Me.pbSub = New System.Windows.Forms.ProgressBar()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
         Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -38,7 +38,7 @@ Partial Class frmMain
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(176, 43)
+        Me.LinkLabel1.Location = New System.Drawing.Point(344, 46)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(53, 12)
         Me.LinkLabel1.TabIndex = 6
@@ -48,7 +48,7 @@ Partial Class frmMain
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.Location = New System.Drawing.Point(234, 43)
+        Me.LinkLabel2.Location = New System.Drawing.Point(344, 69)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(53, 12)
         Me.LinkLabel2.TabIndex = 7
@@ -76,12 +76,16 @@ Partial Class frmMain
         '
         'btnAddRes
         '
-        Me.btnAddRes.Location = New System.Drawing.Point(236, 124)
+        Me.btnAddRes.BackColor = System.Drawing.Color.FromArgb(CType(CType(144, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(40, Byte), Integer))
+        Me.btnAddRes.FlatAppearance.BorderSize = 0
+        Me.btnAddRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddRes.ForeColor = System.Drawing.Color.White
+        Me.btnAddRes.Location = New System.Drawing.Point(236, 114)
         Me.btnAddRes.Name = "btnAddRes"
-        Me.btnAddRes.Size = New System.Drawing.Size(161, 23)
+        Me.btnAddRes.Size = New System.Drawing.Size(161, 33)
         Me.btnAddRes.TabIndex = 14
         Me.btnAddRes.Text = "追剧管理"
-        Me.btnAddRes.UseVisualStyleBackColor = True
+        Me.btnAddRes.UseVisualStyleBackColor = False
         '
         'pbSub
         '
@@ -90,6 +94,16 @@ Partial Class frmMain
         Me.pbSub.Size = New System.Drawing.Size(385, 23)
         Me.pbSub.TabIndex = 15
         Me.pbSub.Value = 100
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Location = New System.Drawing.Point(176, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(143, 12)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "欢迎使用字幕组追剧助手~"
         '
         'PictureBox1
         '
@@ -102,28 +116,18 @@ Partial Class frmMain
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(176, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(143, 12)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "欢迎使用字幕组追剧助手~"
-        '
         'libtnStart
         '
         Me.libtnStart.BackColor = System.Drawing.Color.Transparent
-        Me.libtnStart.BaseColour = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(42, Byte), Integer))
-        Me.libtnStart.BorderColour = System.Drawing.Color.FromArgb(CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer), CType(CType(25, Byte), Integer))
+        Me.libtnStart.BaseColour = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(120, Byte), Integer))
+        Me.libtnStart.BorderColour = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(120, Byte), Integer))
         Me.libtnStart.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.libtnStart.HoverColour = System.Drawing.Color.FromArgb(CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(52, Byte), Integer))
+        Me.libtnStart.HoverColour = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(123, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.libtnStart.Location = New System.Drawing.Point(12, 191)
         Me.libtnStart.Maximum = 100
         Me.libtnStart.Name = "libtnStart"
-        Me.libtnStart.PressedColour = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer), CType(CType(47, Byte), Integer))
-        Me.libtnStart.ProgressColour = System.Drawing.Color.DodgerBlue
+        Me.libtnStart.PressedColour = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(151, Byte), Integer))
+        Me.libtnStart.ProgressColour = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(5, Byte), Integer))
         Me.libtnStart.Size = New System.Drawing.Size(385, 50)
         Me.libtnStart.TabIndex = 3
         Me.libtnStart.Text = "点我检查更新"
