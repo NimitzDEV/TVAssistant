@@ -64,6 +64,9 @@
         If Mid(linkdata, 1, Len(site_link_prefix)) = site_link_prefix And Mid(linkdata, Len(linkdata) - Len(site_link_suffix) + 1, Len(site_link_suffix)) = site_link_suffix Then
             tbResName.Text = title
             tbLinkData.Text = Mid(linkdata, Len(site_link_prefix) + 1, Len(linkdata) - Len(site_link_suffix) - Len(site_link_prefix))
+            If System.Text.RegularExpressions.Regex.IsMatch(tbLinkData.Text, site_scanExclude) Then
+                Exit Sub
+            End If
             If isDuplicate(tbLinkData.Text) Then
                 'gbo(False)
                 lbStatus.Text = "当前剧集已经在列表中"

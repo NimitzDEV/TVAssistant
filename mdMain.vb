@@ -21,6 +21,7 @@ Module mdMain
     Public site_name As String
     Public site_listlink As String
     Public site_xmlName As String
+    Public site_scanExclude As String
     '----------------
     Public siteCfgReader As New Xml.XmlDocument
     Public Function getSiteInfo(ByVal mainSection As String, ByVal subSection As String) As String
@@ -45,6 +46,7 @@ Module mdMain
         site_scanSpliter = rootElement2.SelectSingleNode(require).SelectSingleNode("scanSpliter").InnerText
         site_name = rootElement2.SelectSingleNode(require).SelectSingleNode("name").InnerText
         site_listlink = rootElement2.SelectSingleNode(require).SelectSingleNode("listlink").InnerText
+        site_scanExclude = rootElement2.SelectSingleNode(require).SelectSingleNode("scanExclude").InnerText
         site_xmlName = require
     End Sub
 End Module
