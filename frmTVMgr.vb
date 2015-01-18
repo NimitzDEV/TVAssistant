@@ -85,4 +85,12 @@
         frmAddTV.Dispose()
         loader()
     End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+        If MsgBox("你确定要删除 " & lbAll.Items(lbAll.SelectedIndex) & " 这条追剧信息吗？", MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then Exit Sub
+        Dim nod As Xml.XmlNode = rootElement.SelectNodes("media")(lbAll.SelectedIndex)
+        nod.ParentNode.RemoveChild(nod)
+        tvInfoXml.Save(Application.StartupPath & "\tvseries.xml")
+        loader()
+    End Sub
 End Class
