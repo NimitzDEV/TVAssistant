@@ -26,10 +26,10 @@ Partial Class frmUpdateDetail
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.btnThunder = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbUpdateSelect = New System.Windows.Forms.ComboBox()
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.SuspendLayout()
         '
         'lvPreview
@@ -58,6 +58,11 @@ Partial Class frmUpdateDetail
         Me.ColumnHeader3.Text = "文件名"
         Me.ColumnHeader3.Width = 220
         '
+        'ColumnHeader4
+        '
+        Me.ColumnHeader4.Text = "来源"
+        Me.ColumnHeader4.Width = 70
+        '
         'btnThunder
         '
         Me.btnThunder.Location = New System.Drawing.Point(293, 209)
@@ -70,7 +75,7 @@ Partial Class frmUpdateDetail
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(247, 9)
+        Me.Label2.Location = New System.Drawing.Point(2, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(65, 12)
         Me.Label2.TabIndex = 16
@@ -78,16 +83,12 @@ Partial Class frmUpdateDetail
         '
         'cbUpdateSelect
         '
+        Me.cbUpdateSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbUpdateSelect.FormattingEnabled = True
-        Me.cbUpdateSelect.Location = New System.Drawing.Point(318, 5)
+        Me.cbUpdateSelect.Location = New System.Drawing.Point(73, 5)
         Me.cbUpdateSelect.Name = "cbUpdateSelect"
-        Me.cbUpdateSelect.Size = New System.Drawing.Size(121, 20)
+        Me.cbUpdateSelect.Size = New System.Drawing.Size(366, 20)
         Me.cbUpdateSelect.TabIndex = 15
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "来源"
-        Me.ColumnHeader4.Width = 70
         '
         'frmUpdateDetail
         '

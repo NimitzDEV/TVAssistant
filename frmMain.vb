@@ -17,10 +17,6 @@ Public Class frmMain
             MsgBox("配置文件缺失")
             libtnStart.Enabled = False
         End If
-        tvInfoXml.Load(Application.StartupPath & "\tvseries.xml")
-        rootElement = tvInfoXml.SelectSingleNode("NimitzDEV")
-        siteInfoXml.Load(Application.StartupPath & "\sites.xml")
-        rootElement2 = siteInfoXml.SelectSingleNode("NimitzDEV")
     End Sub
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
@@ -64,27 +60,12 @@ Public Class frmMain
         media_name = getCurrent("name")
         media_path = getCurrent("path")
         media_siteChecker = getCurrent("sitechecker")
-        getSiteInfo(media_siteChecker)
+        getSiteInfo(media_siteChecker, rootElement2)
     End Sub
 
     Private Function getCurrent(ByVal require As String) As String
         Return rootElement.SelectNodes("media")(nowChecking).SelectSingleNode(require).InnerText
     End Function
-
-    Public Sub getSiteInfo(ByVal require As String)
-        site_fileNamePos = rootElement2.SelectSingleNode(require).SelectSingleNode("fileNamePos").InnerText
-        site_link_prefix = rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText
-        site_link_suffix = rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText
-        site_loginFail_FalsePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_FalsePart").InnerText
-        site_loginFail_TruePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_TruePart").InnerText
-        site_loginLink = rootElement2.SelectSingleNode(require).SelectSingleNode("loginLink").InnerText
-        site_loginOK_TruePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginOK_TruePart").InnerText
-        site_requireLogin = rootElement2.SelectSingleNode(require).SelectSingleNode("requireLogin").InnerText
-        site_scanRegularExp = rootElement2.SelectSingleNode(require).SelectSingleNode("scanRegularExp").InnerText
-        site_scanSpliter = rootElement2.SelectSingleNode(require).SelectSingleNode("scanSpliter").InnerText
-        site_name = rootElement2.SelectSingleNode(require).SelectSingleNode("name").InnerText
-    End Sub
-
 
     Private Sub wbCheck_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbCheck.DocumentCompleted
         Dim isOK As Boolean = False
@@ -113,6 +94,7 @@ Public Class frmMain
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         frmUpdate.ShowDialog(Me)
+        frmUpdate.Dispose()
     End Sub
 
     Private Sub btnAddRes_Click(sender As Object, e As EventArgs) Handles btnAddRes.Click

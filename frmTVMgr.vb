@@ -80,4 +80,9 @@
         tbPath.Text = fbdPath.SelectedPath & "\"
     End Sub
 
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        frmAddTV.ShowDialog(Me)
+        frmAddTV.Dispose()
+        loader()
+    End Sub
 End Class
