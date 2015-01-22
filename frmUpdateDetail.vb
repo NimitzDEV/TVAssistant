@@ -10,18 +10,23 @@ Public Class frmUpdateDetail
 
 
     Private Sub btnThunder_Click(sender As Object, e As EventArgs) Handles btnThunder.Click
-        Dim thunderEng As New ThunderAgentLib.Agent
-        For i = 1 To lvPreview.Items.Count
-            If lvPreview.Items(i - 1).Checked Then thunderEng.AddTask(lvPreview.Items(i - 1).Tag, "", media_path, "", "", 1, 0, -1)
-        Next
-        thunderEng.CommitTasks()
+        Try
+            Dim thunderEng As New ThunderAgentLib.Agent
+            For i = 1 To lvPreview.Items.Count
+                If lvPreview.Items(i - 1).Checked Then thunderEng.AddTask(lvPreview.Items(i - 1).Tag, "", media_path, "", "", 1, 0, -1)
+            Next
+            thunderEng.CommitTasks()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            MsgBox("加载迅雷下载组件错误，请确保迅雷已经正确安装")
+        End Try
     End Sub
 
     Private Function getReadableName(ByVal fileName As String)
         Dim tmp2 As String
         Dim regx As String
         tmp2 = fileName
-        regx = System.Text.RegularExpressions.Regex.Match(fileName, "S[0-9]+EP[0-9]+|S[0-9]+E[0-9]+|第[0-9]+集|T[0-9]+C[0-9]+").Value
+        regx = System.Text.RegularExpressions.Regex.Match(fileName, "EP[0-9]+|E[0-9]+|第[0-9]+集|C[0-9]+").Value
         If regx <> "" Then
             If regx.Contains("第") = False And regx.Contains("集") = False Then
                 If regx.Contains("EP") Then regx = regx.Replace("EP", "第")

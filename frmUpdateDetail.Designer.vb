@@ -27,9 +27,9 @@ Partial Class frmUpdateDetail
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.btnThunder = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbUpdateSelect = New System.Windows.Forms.ComboBox()
+        Me.btnThunder = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lvPreview
@@ -63,15 +63,6 @@ Partial Class frmUpdateDetail
         Me.ColumnHeader4.Text = "来源"
         Me.ColumnHeader4.Width = 80
         '
-        'btnThunder
-        '
-        Me.btnThunder.Location = New System.Drawing.Point(333, 242)
-        Me.btnThunder.Name = "btnThunder"
-        Me.btnThunder.Size = New System.Drawing.Size(146, 23)
-        Me.btnThunder.TabIndex = 17
-        Me.btnThunder.Text = "使用迅雷下载以上更新"
-        Me.btnThunder.UseVisualStyleBackColor = True
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -90,11 +81,23 @@ Partial Class frmUpdateDetail
         Me.cbUpdateSelect.Size = New System.Drawing.Size(406, 20)
         Me.cbUpdateSelect.TabIndex = 15
         '
+        'btnThunder
+        '
+        Me.btnThunder.Image = Global.字幕组追剧助手.My.Resources.Resources.thunder32
+        Me.btnThunder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnThunder.Location = New System.Drawing.Point(310, 242)
+        Me.btnThunder.Name = "btnThunder"
+        Me.btnThunder.Size = New System.Drawing.Size(169, 38)
+        Me.btnThunder.TabIndex = 17
+        Me.btnThunder.Text = "使用迅雷下载以上更新"
+        Me.btnThunder.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnThunder.UseVisualStyleBackColor = True
+        '
         'frmUpdateDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(491, 277)
+        Me.ClientSize = New System.Drawing.Size(491, 285)
         Me.Controls.Add(Me.lvPreview)
         Me.Controls.Add(Me.btnThunder)
         Me.Controls.Add(Me.Label2)

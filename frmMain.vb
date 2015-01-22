@@ -115,10 +115,6 @@ Public Class frmMain
         Process.Start("http://github.com/nimitzdev/TVAssistant")
     End Sub
 
-    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
-        frmUpdate.ShowDialog(Me)
-        frmUpdate.Dispose()
-    End Sub
 
     Private Sub btnAddRes_Click(sender As Object, e As EventArgs) Handles btnAddRes.Click
         frmTVMgr.ShowDialog(Me)
@@ -143,5 +139,14 @@ Public Class frmMain
     Private Sub btnSrc_Click(sender As Object, e As EventArgs) Handles btnSrc.Click
         frmSRCMgr.ShowDialog(Me)
         frmSRCMgr.Dispose()
+    End Sub
+
+    Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
+
+    End Sub
+
+    Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click
+        frmAbout.ShowDialog(Me)
+        frmAbout.Dispose()
     End Sub
 End Class
