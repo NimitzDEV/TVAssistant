@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
+﻿Imports System.Web.HttpUtility
+Imports Microsoft.VisualBasic.FileIO.FileSystem
 Module mdMain
     Public updateList As New Collection
     Public updateCategory As New Collection
@@ -36,8 +37,8 @@ Module mdMain
 
     Public Sub getSiteInfo(ByVal require As String, ByVal rootElement2 As Xml.XmlElement)
         site_fileNamePos = rootElement2.SelectSingleNode(require).SelectSingleNode("fileNamePos").InnerText
-        site_link_prefix = rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText
-        site_link_suffix = rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText
+        site_link_prefix = UrlDecode(rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText)
+        site_link_suffix = UrlDecode(rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText)
         site_loginFail_FalsePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_FalseRegex").InnerText
         site_loginFail_TruePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_TrueRegex").InnerText
         site_loginLink = rootElement2.SelectSingleNode(require).SelectSingleNode("loginLink").InnerText
@@ -45,7 +46,7 @@ Module mdMain
         site_loginOK_FalsePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginOK_FalseRegex").InnerText
         site_requireLogin = rootElement2.SelectSingleNode(require).SelectSingleNode("requireLogin").InnerText
         site_scanRegularExp = rootElement2.SelectSingleNode(require).SelectSingleNode("scanRegularExp").InnerText
-        site_scanSpliter = rootElement2.SelectSingleNode(require).SelectSingleNode("scanSpliter").InnerText
+        site_scanSpliter = rootElement2.SelectSingleNode(require).SelectSingleNode("scanSplitter").InnerText
         site_name = rootElement2.SelectSingleNode(require).SelectSingleNode("name").InnerText
         site_listlink = rootElement2.SelectSingleNode(require).SelectSingleNode("listlink").InnerText
         site_scanExclude = rootElement2.SelectSingleNode(require).SelectSingleNode("scanExclude").InnerText

@@ -33,4 +33,41 @@
         reader.SelectSingleNode("NimitzDEV").AppendChild(mainSection)
         reader.Save(Application.StartupPath & "\tvseries.xml")
     End Sub
+    Public Sub site_updateInfo(ByVal id As Integer, ByVal name As String, ByVal exclude As String, _
+                               ByVal listlink As String, ByVal failtrue As String, ByVal failfalse As String _
+                               , ByVal okfalse As String, ByVal oktrue As String _
+                                , ByVal pos As String, ByVal prefix As String, ByVal suffix As String _
+                               , ByVal rlogin As String, ByVal scanexp As String, ByVal splitter As String, ByVal loginlink As String)
+        reader.Load(Application.StartupPath & "\sites.xml")
+        ele = reader.SelectSingleNode("NimitzDEV").ChildNodes(id)
+        ele.SelectSingleNode("name").InnerText = ""
+        ele.SelectSingleNode("name").AppendChild(reader.CreateCDataSection(name))
+        ele.SelectSingleNode("scanExclude").InnerText = ""
+        ele.SelectSingleNode("scanExclude").AppendChild(reader.CreateCDataSection(exclude))
+        ele.SelectSingleNode("listlink").InnerText = ""
+        ele.SelectSingleNode("listlink").AppendChild(reader.CreateCDataSection(listlink))
+        ele.SelectSingleNode("link_prefix").InnerText = ""
+        ele.SelectSingleNode("link_prefix").AppendChild(reader.CreateCDataSection(prefix))
+        ele.SelectSingleNode("link_suffix").InnerText = ""
+        ele.SelectSingleNode("link_suffix").AppendChild(reader.CreateCDataSection(suffix))
+        ele.SelectSingleNode("scanRegularExp").InnerText = ""
+        ele.SelectSingleNode("scanRegularExp").AppendChild(reader.CreateCDataSection(scanexp))
+        ele.SelectSingleNode("scanSplitter").InnerText = ""
+        ele.SelectSingleNode("scanSplitter").AppendChild(reader.CreateCDataSection(splitter))
+        ele.SelectSingleNode("fileNamePos").InnerText = ""
+        ele.SelectSingleNode("fileNamePos").AppendChild(reader.CreateCDataSection(pos))
+        ele.SelectSingleNode("requireLogin").InnerText = ""
+        ele.SelectSingleNode("requireLogin").AppendChild(reader.CreateCDataSection(rlogin))
+        ele.SelectSingleNode("loginLink").InnerText = ""
+        ele.SelectSingleNode("loginLink").AppendChild(reader.CreateCDataSection(loginlink))
+        ele.SelectSingleNode("loginFail_TrueRegex").InnerText = ""
+        ele.SelectSingleNode("loginFail_TrueRegex").AppendChild(reader.CreateCDataSection(failtrue))
+        ele.SelectSingleNode("loginFail_FalseRegex").InnerText = ""
+        ele.SelectSingleNode("loginFail_FalseRegex").AppendChild(reader.CreateCDataSection(failfalse))
+        ele.SelectSingleNode("loginOK_TrueRegex").InnerText = ""
+        ele.SelectSingleNode("loginOK_TrueRegex").AppendChild(reader.CreateCDataSection(oktrue))
+        ele.SelectSingleNode("loginOK_FalseRegex").InnerText = ""
+        ele.SelectSingleNode("loginOK_FalseRegex").AppendChild(reader.CreateCDataSection(okfalse))
+        reader.Save(Application.StartupPath & "\sites.xml")
+    End Sub
 End Module

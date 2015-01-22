@@ -39,7 +39,7 @@ Partial Class frmUpdateDetail
         Me.lvPreview.FullRowSelect = True
         Me.lvPreview.Location = New System.Drawing.Point(4, 31)
         Me.lvPreview.Name = "lvPreview"
-        Me.lvPreview.Size = New System.Drawing.Size(435, 172)
+        Me.lvPreview.Size = New System.Drawing.Size(475, 205)
         Me.lvPreview.TabIndex = 18
         Me.lvPreview.UseCompatibleStateImageBehavior = False
         Me.lvPreview.View = System.Windows.Forms.View.Details
@@ -56,16 +56,16 @@ Partial Class frmUpdateDetail
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "文件名"
-        Me.ColumnHeader3.Width = 220
+        Me.ColumnHeader3.Width = 250
         '
         'ColumnHeader4
         '
         Me.ColumnHeader4.Text = "来源"
-        Me.ColumnHeader4.Width = 70
+        Me.ColumnHeader4.Width = 80
         '
         'btnThunder
         '
-        Me.btnThunder.Location = New System.Drawing.Point(293, 209)
+        Me.btnThunder.Location = New System.Drawing.Point(333, 242)
         Me.btnThunder.Name = "btnThunder"
         Me.btnThunder.Size = New System.Drawing.Size(146, 23)
         Me.btnThunder.TabIndex = 17
@@ -87,14 +87,14 @@ Partial Class frmUpdateDetail
         Me.cbUpdateSelect.FormattingEnabled = True
         Me.cbUpdateSelect.Location = New System.Drawing.Point(73, 5)
         Me.cbUpdateSelect.Name = "cbUpdateSelect"
-        Me.cbUpdateSelect.Size = New System.Drawing.Size(366, 20)
+        Me.cbUpdateSelect.Size = New System.Drawing.Size(406, 20)
         Me.cbUpdateSelect.TabIndex = 15
         '
         'frmUpdateDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(443, 237)
+        Me.ClientSize = New System.Drawing.Size(491, 277)
         Me.Controls.Add(Me.lvPreview)
         Me.Controls.Add(Me.btnThunder)
         Me.Controls.Add(Me.Label2)

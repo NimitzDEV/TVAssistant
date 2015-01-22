@@ -6,7 +6,7 @@
     Dim spliter() As String = {"≠"}
     Public timeout As Integer = 20
     Private Sub frmUpdate_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        wbStart.Navigate("http://nimitzdev.byethost12.com/update/update_zmzzjzs.txt?" & Date.Now)
+        wbStart.Navigate("http://dl.nimitzdev.org/update/update_zmzzjzs.txt?" & Date.Now)
         Me.Height = 94
     End Sub
     Private Sub wbStart_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbStart.DocumentCompleted

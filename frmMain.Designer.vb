@@ -30,6 +30,7 @@ Partial Class frmMain
         Me.pbSub = New System.Windows.Forms.ProgressBar()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnSrc = New System.Windows.Forms.Button()
         Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
         Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,9 +81,9 @@ Partial Class frmMain
         Me.btnAddRes.FlatAppearance.BorderSize = 0
         Me.btnAddRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddRes.ForeColor = System.Drawing.Color.White
-        Me.btnAddRes.Location = New System.Drawing.Point(236, 114)
+        Me.btnAddRes.Location = New System.Drawing.Point(297, 114)
         Me.btnAddRes.Name = "btnAddRes"
-        Me.btnAddRes.Size = New System.Drawing.Size(161, 33)
+        Me.btnAddRes.Size = New System.Drawing.Size(100, 33)
         Me.btnAddRes.TabIndex = 14
         Me.btnAddRes.Text = "追剧管理"
         Me.btnAddRes.UseVisualStyleBackColor = False
@@ -115,6 +116,19 @@ Partial Class frmMain
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'btnSrc
+        '
+        Me.btnSrc.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(151, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btnSrc.FlatAppearance.BorderSize = 0
+        Me.btnSrc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSrc.ForeColor = System.Drawing.Color.White
+        Me.btnSrc.Location = New System.Drawing.Point(191, 114)
+        Me.btnSrc.Name = "btnSrc"
+        Me.btnSrc.Size = New System.Drawing.Size(100, 33)
+        Me.btnSrc.TabIndex = 17
+        Me.btnSrc.Text = "追剧源管理"
+        Me.btnSrc.UseVisualStyleBackColor = False
         '
         'libtnStart
         '
@@ -150,6 +164,7 @@ Partial Class frmMain
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(410, 255)
+        Me.Controls.Add(Me.btnSrc)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.libtnStart)
         Me.Controls.Add(Me.pbSub)
@@ -181,5 +196,6 @@ Partial Class frmMain
     Friend WithEvents btnAddRes As System.Windows.Forms.Button
     Friend WithEvents pbSub As System.Windows.Forms.ProgressBar
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnSrc As System.Windows.Forms.Button
 
 End Class

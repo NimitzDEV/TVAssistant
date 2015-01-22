@@ -1,5 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
 Imports System.Text.RegularExpressions
+Imports System.Web.HttpUtility
 Public Class frmMain
 
     '-------------
@@ -97,7 +98,7 @@ Public Class frmMain
                 filename = Split(gs(i), site_scanSpliter)(site_fileNamePos)
                 If FileExists(media_path & "\" & filename) = False Then
                     '-- 名称 -- 文件名 -- 地址 -- 来源 -- SC
-                    updateList.Add(media_name & "/=/" & filename & "/=/" & gs(i) & "/=/" & site_name & "/=/" & media_siteChecker)
+                    updateList.Add(media_name & "/=/" & UrlDecode(filename) & "/=/" & gs(i) & "/=/" & site_name & "/=/" & media_siteChecker)
                     Debug.Print(gs(i))
                     isOK = True
                 End If
@@ -139,4 +140,8 @@ Public Class frmMain
     End Sub
 
 
+    Private Sub btnSrc_Click(sender As Object, e As EventArgs) Handles btnSrc.Click
+        frmSRCMgr.ShowDialog(Me)
+        frmSRCMgr.Dispose()
+    End Sub
 End Class

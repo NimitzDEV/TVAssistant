@@ -50,6 +50,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -86,6 +87,12 @@
     </Compile>
     <Compile Include="frmMain.Designer.vb">
       <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSRCMgr.Designer.vb">
+      <DependentUpon>frmSRCMgr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSRCMgr.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmTVMgr.Designer.vb">
@@ -136,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSRCMgr.resx">
+      <DependentUpon>frmSRCMgr.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTVMgr.resx">
       <DependentUpon>frmTVMgr.vb</DependentUpon>

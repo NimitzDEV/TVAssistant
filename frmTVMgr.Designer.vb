@@ -219,6 +219,7 @@ Partial Class frmTVMgr
         Me.ClientSize = New System.Drawing.Size(494, 227)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gb)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmTVMgr"
