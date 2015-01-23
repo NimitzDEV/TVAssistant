@@ -12,6 +12,10 @@ Public Class frmMain
     Dim seasonCount As Integer = 0
     Dim nowChecking As Integer = 0
 
+    Private Sub frmMain_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        SaveSettings()
+    End Sub
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
@@ -19,7 +23,7 @@ Public Class frmMain
             MsgBox("配置文件缺失")
             libtnStart.Enabled = False
         End If
-
+        ReadSettings()
     End Sub
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
@@ -96,7 +100,11 @@ Public Class frmMain
             If gs(i) <> "" Then
                 Dim filename As String
                 filename = Split(gs(i), site_scanSpliter)(site_fileNamePos)
+                If fuzzy_search Then
+                    If fuzzySearch(filename) Then Continue For
+                End If
                 If FileExists(media_path & "\" & filename) = False Then
+
                     '-- 名称 -- 文件名 -- 地址 -- 来源 -- SC
                     updateList.Add(media_name & "/=/" & UrlDecode(filename) & "/=/" & gs(i) & "/=/" & site_name & "/=/" & media_siteChecker)
                     Debug.Print(gs(i))
@@ -111,10 +119,14 @@ Public Class frmMain
         If gs.Length = 0 Then Exit Sub
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Process.Start("http://github.com/nimitzdev/TVAssistant")
-    End Sub
-
+    Private Function fuzzySearch(ByVal name As String) As Boolean
+        For Each ff As String In My.Computer.FileSystem.GetFiles(media_path & "\", FileIO.SearchOption.SearchTopLevelOnly, "*.*")
+            If getReadableName(My.Computer.FileSystem.GetName(ff)) = getReadableName(name) Then
+                Return True
+            End If
+        Next
+        Return False
+    End Function
 
     Private Sub btnAddRes_Click(sender As Object, e As EventArgs) Handles btnAddRes.Click
         frmTVMgr.ShowDialog(Me)
@@ -142,7 +154,8 @@ Public Class frmMain
     End Sub
 
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
-
+        frmSettings.ShowDialog(Me)
+        frmSettings .Dispose 
     End Sub
 
     Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click

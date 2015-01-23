@@ -23,7 +23,6 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.wbCheck = New System.Windows.Forms.WebBrowser()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.btnAddRes = New System.Windows.Forms.Button()
@@ -37,16 +36,6 @@ Partial Class frmMain
         Me.btnSettings = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(178, 36)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(53, 12)
-        Me.LinkLabel1.TabIndex = 6
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "使用说明"
         '
         'wbCheck
         '
@@ -136,7 +125,7 @@ Partial Class frmMain
         Me.libtnStart.ProgressColour = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(195, Byte), Integer), CType(CType(5, Byte), Integer))
         Me.libtnStart.Size = New System.Drawing.Size(370, 50)
         Me.libtnStart.TabIndex = 3
-        Me.libtnStart.Text = "点我检查更新"
+        Me.libtnStart.Text = "点我检查剧集更新"
         Me.libtnStart.Value = 100
         '
         'LogInSeperator1
@@ -191,7 +180,6 @@ Partial Class frmMain
         Me.Controls.Add(Me.btnAddRes)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.wbCheck)
-        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.LogInSeperator1)
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -209,7 +197,6 @@ Partial Class frmMain
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents libtnStart As 字幕组追剧助手.LogInButtonWithProgress
     Friend WithEvents LogInSeperator1 As 字幕组追剧助手.LogInSeperator
-    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
     Friend WithEvents wbCheck As System.Windows.Forms.WebBrowser
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btnAddRes As System.Windows.Forms.Button

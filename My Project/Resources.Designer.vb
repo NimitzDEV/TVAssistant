@@ -63,6 +63,16 @@ Namespace My.Resources
         '''<summary>
         '''  查找 System.Drawing.Bitmap 类型的本地化资源。
         '''</summary>
+        Friend ReadOnly Property help_48() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("help_48", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
         Friend ReadOnly Property main_new() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("main_new", resourceCulture)
@@ -86,6 +96,26 @@ Namespace My.Resources
         Friend ReadOnly Property off() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("off", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Friend ReadOnly Property settings() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("settings", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  查找 System.Drawing.Bitmap 类型的本地化资源。
+        '''</summary>
+        Friend ReadOnly Property settings_48() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("settings_48", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

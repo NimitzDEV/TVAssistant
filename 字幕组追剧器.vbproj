@@ -98,6 +98,12 @@
       <DependentUpon>frmMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmSettings.Designer.vb">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmSRCMgr.Designer.vb">
       <DependentUpon>frmSRCMgr.vb</DependentUpon>
     </Compile>
@@ -151,6 +157,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSRCMgr.resx">
       <DependentUpon>frmSRCMgr.vb</DependentUpon>
     </EmbeddedResource>
@@ -197,6 +206,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_big.ico" />
+    <None Include="res\help_48.png" />
+    <None Include="res\settings_48.png" />
+    <None Include="res\settings.png" />
     <None Include="res\off.png" />
     <None Include="res\n_48.png" />
   </ItemGroup>

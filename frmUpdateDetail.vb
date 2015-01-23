@@ -22,22 +22,7 @@ Public Class frmUpdateDetail
         End Try
     End Sub
 
-    Private Function getReadableName(ByVal fileName As String)
-        Dim tmp2 As String
-        Dim regx As String
-        tmp2 = fileName
-        regx = System.Text.RegularExpressions.Regex.Match(fileName, "EP[0-9]+|E[0-9]+|第[0-9]+集|C[0-9]+").Value
-        If regx <> "" Then
-            If regx.Contains("第") = False And regx.Contains("集") = False Then
-                If regx.Contains("EP") Then regx = regx.Replace("EP", "第")
-                If regx.Contains("E") Then regx = regx.Replace("E", "第")
-                If regx.Contains("C") Then regx = regx.Replace("C", "第")
-                regx &= "集"
-            End If
-            Return (regx)
-        End If
-        Return ""
-    End Function
+   
 
     Private Sub cbUpdateSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbUpdateSelect.SelectedIndexChanged
         lvPreview.Items.Clear()
