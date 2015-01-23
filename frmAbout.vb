@@ -38,9 +38,11 @@ Public Class frmAbout
             Else
                 Me.Invoke(New VoidDelegate(AddressOf updateLb), {"当前已经是最新版本 - " & Application.ProductVersion, Color.Green, "", ""})
             End If
+            DeleteFile(folderPath & "ud.ini")
         Catch ex As Exception
             MsgBox("检查更新的过程中出现问题")
         End Try
+
     End Sub
 
     Private Sub updateLb(ByVal text As String, ByVal color As Color, ByVal detail As String, ByVal dl As String)
