@@ -27,6 +27,7 @@ Public Class frmMain
     End Sub
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
+        pnlControl.Enabled = True
         tvInfoXml.Load(Application.StartupPath & "\tvseries.xml")
         rootElement = tvInfoXml.SelectSingleNode("NimitzDEV")
         siteInfoXml.Load(Application.StartupPath & "\sites.xml")
@@ -43,7 +44,9 @@ Public Class frmMain
     Private Sub checkNextItem()
         If nowChecking = allCount Then
             libtnStart.Text = "再来一次"
+            lbWbStatus.Text = "完成"
             libtnStart.Enabled = True
+            pnlControl.Enabled = False
             nowChecking = 0
             Me.Refresh()
             If updateCategory.Count = 0 Then
@@ -83,6 +86,8 @@ Public Class frmMain
 
     Private Sub wbCheck_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbCheck.DocumentCompleted
         Dim isOK As Boolean = False
+        Application.DoEvents()
+
         If wbCheck.ReadyState <> WebBrowserReadyState.Complete Then Exit Sub
 
         If site_requireLogin Then
@@ -152,6 +157,8 @@ Public Class frmMain
         ElseIf wbCheck.ReadyState = WebBrowserReadyState.Complete Then
             pbSub.Value = pbSub.Maximum
         End If
+        If libtnStart.Enabled = True Then Exit Sub
+        lbWbStatus.Text = pbSub.Value & "% - " & shortString(wbCheck.StatusText)
     End Sub
 
 
@@ -168,5 +175,14 @@ Public Class frmMain
     Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click
         frmAbout.ShowDialog(Me)
         frmAbout.Dispose()
+    End Sub
+
+    Private Sub btnRefresh_Click(sender As Object, e As EventArgs) Handles btnRefresh.Click
+        wbCheck.Refresh(WebBrowserRefreshOption.Completely)
+    End Sub
+
+    Private Sub btnNext_Click(sender As Object, e As EventArgs) Handles btnNext.Click
+        wbCheck.Stop()
+        checkNextItem()
     End Sub
 End Class

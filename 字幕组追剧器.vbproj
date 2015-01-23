@@ -206,6 +206,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_big.ico" />
+    <None Include="res\refresh_16.png" />
+    <None Include="res\cancel_16.png" />
+    <None Include="res\cancel_24.png" />
     <None Include="res\help_48.png" />
     <None Include="res\settings_48.png" />
     <None Include="res\settings.png" />
