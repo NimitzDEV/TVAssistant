@@ -30,10 +30,10 @@ Partial Class frmMain
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSrc = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
-        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.btnAbout = New System.Windows.Forms.Button()
         Me.btnSettings = New System.Windows.Forms.Button()
+        Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
+        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -111,6 +111,32 @@ Partial Class frmMain
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'btnAbout
+        '
+        Me.btnAbout.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(1, Byte), Integer))
+        Me.btnAbout.FlatAppearance.BorderSize = 0
+        Me.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAbout.ForeColor = System.Drawing.Color.White
+        Me.btnAbout.Location = New System.Drawing.Point(284, 113)
+        Me.btnAbout.Name = "btnAbout"
+        Me.btnAbout.Size = New System.Drawing.Size(100, 26)
+        Me.btnAbout.TabIndex = 18
+        Me.btnAbout.Text = "关于/更新"
+        Me.btnAbout.UseVisualStyleBackColor = False
+        '
+        'btnSettings
+        '
+        Me.btnSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(164, Byte), Integer), CType(CType(240, Byte), Integer))
+        Me.btnSettings.FlatAppearance.BorderSize = 0
+        Me.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSettings.ForeColor = System.Drawing.Color.White
+        Me.btnSettings.Location = New System.Drawing.Point(180, 113)
+        Me.btnSettings.Name = "btnSettings"
+        Me.btnSettings.Size = New System.Drawing.Size(100, 26)
+        Me.btnSettings.TabIndex = 19
+        Me.btnSettings.Text = "设置/帮助"
+        Me.btnSettings.UseVisualStyleBackColor = False
+        '
         'libtnStart
         '
         Me.libtnStart.BackColor = System.Drawing.Color.Transparent
@@ -139,32 +165,6 @@ Partial Class frmMain
         Me.LogInSeperator1.TabIndex = 5
         Me.LogInSeperator1.Text = "LogInSeperator1"
         Me.LogInSeperator1.Thickness = 1.0!
-        '
-        'btnAbout
-        '
-        Me.btnAbout.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(185, Byte), Integer), CType(CType(1, Byte), Integer))
-        Me.btnAbout.FlatAppearance.BorderSize = 0
-        Me.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAbout.ForeColor = System.Drawing.Color.White
-        Me.btnAbout.Location = New System.Drawing.Point(284, 113)
-        Me.btnAbout.Name = "btnAbout"
-        Me.btnAbout.Size = New System.Drawing.Size(100, 26)
-        Me.btnAbout.TabIndex = 18
-        Me.btnAbout.Text = "关于/更新"
-        Me.btnAbout.UseVisualStyleBackColor = False
-        '
-        'btnSettings
-        '
-        Me.btnSettings.BackColor = System.Drawing.Color.FromArgb(CType(CType(1, Byte), Integer), CType(CType(164, Byte), Integer), CType(CType(240, Byte), Integer))
-        Me.btnSettings.FlatAppearance.BorderSize = 0
-        Me.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSettings.ForeColor = System.Drawing.Color.White
-        Me.btnSettings.Location = New System.Drawing.Point(180, 113)
-        Me.btnSettings.Name = "btnSettings"
-        Me.btnSettings.Size = New System.Drawing.Size(100, 26)
-        Me.btnSettings.TabIndex = 19
-        Me.btnSettings.Text = "设置/帮助"
-        Me.btnSettings.UseVisualStyleBackColor = False
         '
         'frmMain
         '

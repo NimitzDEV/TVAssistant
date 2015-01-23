@@ -56,11 +56,18 @@ Public Class frmMain
         End If
         prepareData()
         wbCheck.Navigate(site_link_prefix & media_linkData & site_link_suffix)
-        libtnStart.Text = "正在进行：" & media_name
+        libtnStart.Text = "正在进行：" & shortString(media_name)
         nowChecking += 1
         libtnStart.Value = nowChecking
         Me.Refresh()
     End Sub
+
+    Private Function shortString(ByVal str As String) As String
+        If Len(media_name) > 15 Then
+            Return Mid(str, 1, 15) & " ..."
+        End If
+        Return str
+    End Function
 
     Private Sub prepareData()
         media_linkData = getCurrent("linkdata")
