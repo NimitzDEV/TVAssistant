@@ -79,6 +79,12 @@
     <Compile Include="frmAbout.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAddSrc.Designer.vb">
+      <DependentUpon>frmAddSrc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSrc.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAddTV.Designer.vb">
       <DependentUpon>frmAddTV.vb</DependentUpon>
     </Compile>
@@ -148,6 +154,9 @@
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSrc.resx">
+      <DependentUpon>frmAddSrc.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddTV.resx">
       <DependentUpon>frmAddTV.vb</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +215,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_big.ico" />
+    <None Include="res\gift_64.png" />
     <None Include="res\refresh_16.png" />
     <None Include="res\cancel_16.png" />
     <None Include="res\cancel_24.png" />

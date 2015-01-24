@@ -44,7 +44,7 @@ Public Class frmMain
     Private Sub checkNextItem()
         If nowChecking = allCount Then
             libtnStart.Text = "再来一次"
-            lbWbStatus.Text = "完成"
+            lbWbStatus.Text = "点击按钮再来一次"
             libtnStart.Enabled = True
             pnlControl.Enabled = False
             nowChecking = 0

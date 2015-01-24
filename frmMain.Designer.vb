@@ -66,7 +66,7 @@ Partial Class frmMain
         '
         'pbSub
         '
-        Me.pbSub.Location = New System.Drawing.Point(14, 186)
+        Me.pbSub.Location = New System.Drawing.Point(14, 185)
         Me.pbSub.Name = "pbSub"
         Me.pbSub.Size = New System.Drawing.Size(370, 23)
         Me.pbSub.TabIndex = 15
@@ -127,7 +127,7 @@ Partial Class frmMain
         Me.pnlControl.Controls.Add(Me.btnRefresh)
         Me.pnlControl.Controls.Add(Me.btnNext)
         Me.pnlControl.Enabled = False
-        Me.pnlControl.Location = New System.Drawing.Point(14, 209)
+        Me.pnlControl.Location = New System.Drawing.Point(14, 208)
         Me.pnlControl.Name = "pnlControl"
         Me.pnlControl.Size = New System.Drawing.Size(370, 28)
         Me.pnlControl.TabIndex = 20
@@ -187,7 +187,7 @@ Partial Class frmMain
         '
         Me.libtnStart.BackColor = System.Drawing.Color.Transparent
         Me.libtnStart.BaseColour = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(120, Byte), Integer))
-        Me.libtnStart.BorderColour = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(120, Byte), Integer))
+        Me.libtnStart.BorderColour = System.Drawing.Color.Transparent
         Me.libtnStart.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.libtnStart.HoverColour = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(123, Byte), Integer), CType(CType(134, Byte), Integer))
         Me.libtnStart.Location = New System.Drawing.Point(14, 153)
@@ -216,7 +216,7 @@ Partial Class frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(396, 237)
+        Me.ClientSize = New System.Drawing.Size(396, 236)
         Me.Controls.Add(Me.pnlControl)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnSettings)

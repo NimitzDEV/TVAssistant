@@ -18,6 +18,9 @@
         rootElement2 = siteInfoXML.SelectSingleNode("NimitzDEV")
         listLoader()
         sitesLoader()
+        If lbAll.Items.Count <> 0 Then
+            lbAll.SelectedIndex = 0
+        End If
     End Sub
 
     Private Sub confirmSites(ByVal keyStr As String)
