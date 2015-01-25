@@ -19,10 +19,12 @@ Public Class frmMain
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
-        If FileExists(folderPath & "\tvseries.xml") = False Or FileExists(folderPath & "\sites.xml") = False Then
-            MsgBox("配置文件缺失")
-            libtnStart.Enabled = False
+        If FileExists(folderPath & "\tvseries.xml") = False And FileExists(folderPath & "\sites.xml") = False Then
+            frmInit.ShowDialog(Me)
+            frmInit.Dispose()
         End If
+        If FileExists(folderPath & "\tvseries.xml") = False Then emptyFile("tvseries.xml")
+        If FileExists(folderPath & "\sites.xml") = False Then emptyFile("sites.xml")
         ReadSettings()
     End Sub
 
@@ -51,6 +53,8 @@ Public Class frmMain
             Me.Refresh()
             If updateCategory.Count = 0 Then
                 MsgBox("当前所有剧集为最新一集了，无需更新")
+                libtnStart.Maximum = 1
+                libtnStart.Value = 1
                 Exit Sub
             End If
             frmUpdateDetail.ShowDialog(Me)

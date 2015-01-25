@@ -29,6 +29,8 @@ Partial Class frmSettings
         Me.btnHelp = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
+        Me.btnNew = New System.Windows.Forms.Button()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,7 +58,7 @@ Partial Class frmSettings
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.字幕组追剧助手.My.Resources.Resources.help_48
-        Me.PictureBox2.Location = New System.Drawing.Point(12, 80)
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 102)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(48, 47)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -79,9 +81,9 @@ Partial Class frmSettings
         Me.btnHelp.FlatAppearance.BorderSize = 0
         Me.btnHelp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnHelp.ForeColor = System.Drawing.Color.White
-        Me.btnHelp.Location = New System.Drawing.Point(66, 80)
+        Me.btnHelp.Location = New System.Drawing.Point(66, 102)
         Me.btnHelp.Name = "btnHelp"
-        Me.btnHelp.Size = New System.Drawing.Size(185, 47)
+        Me.btnHelp.Size = New System.Drawing.Size(120, 47)
         Me.btnHelp.TabIndex = 18
         Me.btnHelp.Text = "获取帮助"
         Me.btnHelp.UseVisualStyleBackColor = False
@@ -92,7 +94,7 @@ Partial Class frmSettings
         Me.btnCancel.FlatAppearance.BorderSize = 0
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCancel.ForeColor = System.Drawing.Color.White
-        Me.btnCancel.Location = New System.Drawing.Point(257, 104)
+        Me.btnCancel.Location = New System.Drawing.Point(254, 56)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(98, 23)
         Me.btnCancel.TabIndex = 33
@@ -105,18 +107,44 @@ Partial Class frmSettings
         Me.btnSave.FlatAppearance.BorderSize = 0
         Me.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSave.ForeColor = System.Drawing.Color.White
-        Me.btnSave.Location = New System.Drawing.Point(257, 80)
+        Me.btnSave.Location = New System.Drawing.Point(153, 56)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(98, 23)
         Me.btnSave.TabIndex = 32
         Me.btnSave.Text = "保存"
         Me.btnSave.UseVisualStyleBackColor = False
         '
+        'LogInSeperator1
+        '
+        Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
+        Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
+        Me.LogInSeperator1.Location = New System.Drawing.Point(12, 76)
+        Me.LogInSeperator1.Name = "LogInSeperator1"
+        Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.LogInSeperator1.Size = New System.Drawing.Size(340, 20)
+        Me.LogInSeperator1.TabIndex = 34
+        Me.LogInSeperator1.Text = "LogInSeperator1"
+        Me.LogInSeperator1.Thickness = 1.0!
+        '
+        'btnNew
+        '
+        Me.btnNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(127, Byte), Integer), CType(CType(186, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnNew.FlatAppearance.BorderSize = 0
+        Me.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNew.ForeColor = System.Drawing.Color.White
+        Me.btnNew.Location = New System.Drawing.Point(192, 102)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.Size = New System.Drawing.Size(120, 47)
+        Me.btnNew.TabIndex = 35
+        Me.btnNew.Text = "运行初始化向导"
+        Me.btnNew.UseVisualStyleBackColor = False
+        '
         'frmSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(364, 141)
+        Me.ClientSize = New System.Drawing.Size(364, 161)
+        Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnHelp)
@@ -124,6 +152,7 @@ Partial Class frmSettings
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cbFuzzySearch)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.LogInSeperator1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -144,4 +173,6 @@ Partial Class frmSettings
     Friend WithEvents btnHelp As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
+    Friend WithEvents LogInSeperator1 As 字幕组追剧助手.LogInSeperator
+    Friend WithEvents btnNew As System.Windows.Forms.Button
 End Class

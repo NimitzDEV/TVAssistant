@@ -94,6 +94,12 @@
     <Compile Include="frmAddTV.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmInit.Designer.vb">
+      <DependentUpon>frmInit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInit.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin.Designer.vb">
       <DependentUpon>frmLogin.vb</DependentUpon>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddTV.resx">
       <DependentUpon>frmAddTV.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInit.resx">
+      <DependentUpon>frmInit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

@@ -75,4 +75,9 @@ Module mdMain
         End If
         Return ""
     End Function
+
+    Public Sub emptyFile(ByVal fileName As String)
+        System.IO.File.WriteAllText(folderPath & "\" & fileName, "<?xml version=""1.0"" encoding=""UTF-8"" standalone=""yes""?>" _
+                                    & vbCrLf & "<NimitzDEV>" & vbCrLf & "</NimitzDEV>")
+    End Sub
 End Module
