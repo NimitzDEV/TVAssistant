@@ -1,7 +1,7 @@
 ﻿Imports System.Web.HttpUtility
 Imports Microsoft.VisualBasic.FileIO.FileSystem
 Module mdMain
-    Public folderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\字幕组追剧助手\"
+
     Public updateList As New Collection
     Public updateCategory As New Collection
     '--------------
@@ -28,11 +28,11 @@ Module mdMain
     '----------------
     Public siteCfgReader As New Xml.XmlDocument
     Public Function getSiteInfo(ByVal mainSection As String, ByVal subSection As String) As String
-        If FileExists(Application.StartupPath & "\sites.xml") = False Then
+        If FileExists(folderPath & "\sites.xml") = False Then
             MsgBox("无法加载站点信息配置")
             Return ""
         End If
-        siteCfgReader.Load(Application.StartupPath & "\sites.xml")
+        siteCfgReader.Load(folderPath & "\sites.xml")
         Return siteCfgReader.SelectSingleNode("NimitzDEV").SelectSingleNode(mainSection).SelectSingleNode(subSection).InnerText
     End Function
 

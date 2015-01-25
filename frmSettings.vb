@@ -12,4 +12,8 @@
     Private Sub frmSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbFuzzySearch.Checked = fuzzy_search
     End Sub
+
+    Private Sub btnHelp_Click(sender As Object, e As EventArgs) Handles btnHelp.Click
+        Process.Start("http://nimitzdev.org/?page_id=252")
+    End Sub
 End Class

@@ -19,7 +19,7 @@ Public Class frmMain
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
-        If FileExists(Application.StartupPath & "\tvseries.xml") = False Or FileExists(Application.StartupPath & "\sites.xml") = False Then
+        If FileExists(folderPath & "\tvseries.xml") = False Or FileExists(folderPath & "\sites.xml") = False Then
             MsgBox("配置文件缺失")
             libtnStart.Enabled = False
         End If
@@ -28,9 +28,9 @@ Public Class frmMain
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
         pnlControl.Enabled = True
-        tvInfoXml.Load(Application.StartupPath & "\tvseries.xml")
+        tvInfoXml.Load(folderPath & "\tvseries.xml")
         rootElement = tvInfoXml.SelectSingleNode("NimitzDEV")
-        siteInfoXml.Load(Application.StartupPath & "\sites.xml")
+        siteInfoXml.Load(folderPath & "\sites.xml")
         rootElement2 = siteInfoXml.SelectSingleNode("NimitzDEV")
         libtnStart.Enabled = False
         updateList.Clear()

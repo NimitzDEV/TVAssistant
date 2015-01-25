@@ -20,13 +20,13 @@ Public Class frmAddTV
         For i = 0 To frmTVMgr.cbSelecter.Items.Count - 1
             cbSelecter.Items.Add(frmTVMgr.cbSelecter.Items(i))
         Next
-        siteInfoXML.Load(Application.StartupPath & "\sites.xml")
+        siteInfoXML.Load(folderPath & "\sites.xml")
         rootElement2 = siteInfoXML.SelectSingleNode("NimitzDEV")
         loader()
     End Sub
 
     Private Sub loader()
-        tvInfoXml.Load(Application.StartupPath & "\tvseries.xml")
+        tvInfoXml.Load(folderPath & "\tvseries.xml")
         rootElement = tvInfoXml.SelectSingleNode("NimitzDEV")
     End Sub
 

@@ -43,7 +43,7 @@
         Dim lineInput As String = ""
         Dim require As String = ""
         Dim lineCounter As Integer = 0
-        streamReader = System.IO.File.ReadAllLines(Application.StartupPath & "\sites.xml")
+        streamReader = System.IO.File.ReadAllLines(folderPath & "\sites.xml")
         For i = 0 To UBound(streamReader)
             require &= streamReader(i) & vbCrLf
             If i = 1 Then
@@ -51,12 +51,16 @@
             End If
         Next
 
-        System.IO.File.WriteAllText(Application.StartupPath & "\sites.xml", require)
-  
+        System.IO.File.WriteAllText(folderPath & "\sites.xml", require)
+        MsgBox("添加成功")
         txtData.Text = ""
     End Sub
 
     Private Sub btnClean_Click(sender As Object, e As EventArgs) Handles btnClean.Click
         txtData.Text = ""
+    End Sub
+
+    Private Sub llbAddSrcHelp_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbAddSrcHelp.LinkClicked
+        Process.Start("http://nimitzdev.org/?page_id=266")
     End Sub
 End Class

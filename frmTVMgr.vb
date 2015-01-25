@@ -12,9 +12,9 @@
         gb.Enabled = False
         lbAll.Items.Clear()
         cbSelecter.Items.Clear()
-        tvInfoXml.Load(Application.StartupPath & "\tvseries.xml")
+        tvInfoXml.Load(folderPath & "\tvseries.xml")
         rootElement = tvInfoXml.SelectSingleNode("NimitzDEV")
-        siteInfoXML.Load(Application.StartupPath & "\sites.xml")
+        siteInfoXML.Load(folderPath & "\sites.xml")
         rootElement2 = siteInfoXML.SelectSingleNode("NimitzDEV")
         listLoader()
         sitesLoader()
@@ -93,7 +93,7 @@
         If MsgBox("你确定要删除 " & lbAll.Items(lbAll.SelectedIndex) & " 这条追剧信息吗？", MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then Exit Sub
         Dim nod As Xml.XmlNode = rootElement.SelectNodes("media")(lbAll.SelectedIndex)
         nod.ParentNode.RemoveChild(nod)
-        tvInfoXml.Save(Application.StartupPath & "\tvseries.xml")
+        tvInfoXml.Save(folderPath & "\tvseries.xml")
         loader()
     End Sub
 End Class

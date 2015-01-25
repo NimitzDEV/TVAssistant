@@ -1,6 +1,6 @@
 ﻿Imports Microsoft.VisualBasic.FileIO.FileSystem
 Module mdSettings
-
+    Public folderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) & "\字幕组追剧助手\"
     '====
     Public fuzzy_search As Boolean = False
     '====

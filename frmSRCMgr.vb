@@ -30,7 +30,7 @@
     End Sub
 
     Private Sub sitesLoader()
-        siteInfoXML.Load(Application.StartupPath & "\sites.xml")
+        siteInfoXML.Load(folderPath & "\sites.xml")
         rootElement2 = siteInfoXML.SelectSingleNode("NimitzDEV")
         lbAll.Items.Clear()
         gb.Enabled = False
@@ -46,7 +46,7 @@
         If MsgBox("确定要删除 " & tbSiteName.Text & " 这个追剧源吗？", vbOKCancel) = MsgBoxResult.Cancel Then Exit Sub
         Dim nod As Xml.XmlNode = rootElement2.ChildNodes(lbAll.SelectedIndex)
         nod.ParentNode.RemoveChild(nod)
-        siteInfoXML.Save(Application.StartupPath & "\sites.xml")
+        siteInfoXML.Save(folderPath & "\sites.xml")
         sitesLoader()
     End Sub
 
