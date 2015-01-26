@@ -23,6 +23,7 @@
         tbScanExp.Text = site_scanRegularExp
         tbSplitter.Text = site_scanSpliter
         tbLoginLink.Text = site_loginLink
+        tbVersion.Text = site_version
     End Sub
 
     Private Sub frmSRCMgr_Load(sender As Object, e As EventArgs) Handles MyBase.Load

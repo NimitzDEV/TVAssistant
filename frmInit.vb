@@ -17,6 +17,7 @@ Public Class frmInit
             Exit Sub
         End If
         btnOK.Text = "稍后..."
+        btnCancel.Enabled = False
         btnOK.Enabled = False
         Application.DoEvents()
         downloadFile()

@@ -25,8 +25,10 @@ Module mdMain
     Public site_listlink As String
     Public site_xmlName As String
     Public site_scanExclude As String
+    Public site_version As Integer
     '----------------
     Public siteCfgReader As New Xml.XmlDocument
+    Dim xe As Xml.XmlElement
     Public Function getSiteInfo(ByVal mainSection As String, ByVal subSection As String) As String
         If FileExists(folderPath & "\sites.xml") = False Then
             MsgBox("无法加载站点信息配置")
@@ -37,6 +39,7 @@ Module mdMain
     End Function
 
     Public Sub getSiteInfo(ByVal require As String, ByVal rootElement2 As Xml.XmlElement)
+        xe = CType(rootElement2.SelectSingleNode(require), Xml.XmlElement)
         site_fileNamePos = rootElement2.SelectSingleNode(require).SelectSingleNode("fileNamePos").InnerText
         site_link_prefix = UrlDecode(rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText)
         site_link_suffix = UrlDecode(rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText)
@@ -51,6 +54,7 @@ Module mdMain
         site_name = rootElement2.SelectSingleNode(require).SelectSingleNode("name").InnerText
         site_listlink = rootElement2.SelectSingleNode(require).SelectSingleNode("listlink").InnerText
         site_scanExclude = rootElement2.SelectSingleNode(require).SelectSingleNode("scanExclude").InnerText
+        site_version = Int(xe.GetAttribute("version"))
         site_xmlName = require
     End Sub
 

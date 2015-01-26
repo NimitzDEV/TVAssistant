@@ -23,6 +23,7 @@ Partial Class frmSRCMgr
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnAdd = New System.Windows.Forms.Button()
         Me.gb = New System.Windows.Forms.GroupBox()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
@@ -57,7 +58,8 @@ Partial Class frmSRCMgr
         Me.tbXmlName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbAll = New System.Windows.Forms.ListBox()
-        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.tbVersion = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.gb.SuspendLayout()
         Me.SuspendLayout()
@@ -74,8 +76,23 @@ Partial Class frmSRCMgr
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "追剧源管理"
         '
+        'btnAdd
+        '
+        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(151, Byte), Integer), CType(CType(237, Byte), Integer))
+        Me.btnAdd.FlatAppearance.BorderSize = 0
+        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAdd.ForeColor = System.Drawing.Color.White
+        Me.btnAdd.Location = New System.Drawing.Point(6, 388)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(194, 31)
+        Me.btnAdd.TabIndex = 3
+        Me.btnAdd.Text = "添加追剧源"
+        Me.btnAdd.UseVisualStyleBackColor = False
+        '
         'gb
         '
+        Me.gb.Controls.Add(Me.tbVersion)
+        Me.gb.Controls.Add(Me.Label16)
         Me.gb.Controls.Add(Me.btnDelete)
         Me.gb.Controls.Add(Me.btnSave)
         Me.gb.Controls.Add(Me.tbLoginFailFalse)
@@ -238,7 +255,7 @@ Partial Class frmSRCMgr
         '
         'tbExclude
         '
-        Me.tbExclude.Location = New System.Drawing.Point(149, 208)
+        Me.tbExclude.Location = New System.Drawing.Point(149, 209)
         Me.tbExclude.Name = "tbExclude"
         Me.tbExclude.Size = New System.Drawing.Size(270, 21)
         Me.tbExclude.TabIndex = 17
@@ -390,18 +407,22 @@ Partial Class frmSRCMgr
         Me.lbAll.Size = New System.Drawing.Size(194, 364)
         Me.lbAll.TabIndex = 0
         '
-        'btnAdd
+        'Label16
         '
-        Me.btnAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(7, Byte), Integer), CType(CType(151, Byte), Integer), CType(CType(237, Byte), Integer))
-        Me.btnAdd.FlatAppearance.BorderSize = 0
-        Me.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAdd.ForeColor = System.Drawing.Color.White
-        Me.btnAdd.Location = New System.Drawing.Point(6, 388)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(194, 31)
-        Me.btnAdd.TabIndex = 3
-        Me.btnAdd.Text = "添加追剧源"
-        Me.btnAdd.UseVisualStyleBackColor = False
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(185, 45)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(65, 12)
+        Me.Label16.TabIndex = 32
+        Me.Label16.Text = "配置版本号"
+        '
+        'tbVersion
+        '
+        Me.tbVersion.Enabled = False
+        Me.tbVersion.Location = New System.Drawing.Point(268, 41)
+        Me.tbVersion.Name = "tbVersion"
+        Me.tbVersion.Size = New System.Drawing.Size(100, 21)
+        Me.tbVersion.TabIndex = 33
         '
         'frmSRCMgr
         '
@@ -458,4 +479,6 @@ Partial Class frmSRCMgr
     Friend WithEvents btnDelete As System.Windows.Forms.Button
     Friend WithEvents btnSave As System.Windows.Forms.Button
     Friend WithEvents btnAdd As System.Windows.Forms.Button
+    Friend WithEvents tbVersion As System.Windows.Forms.TextBox
+    Friend WithEvents Label16 As System.Windows.Forms.Label
 End Class
