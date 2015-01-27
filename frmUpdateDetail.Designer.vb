@@ -30,6 +30,8 @@ Partial Class frmUpdateDetail
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbUpdateSelect = New System.Windows.Forms.ComboBox()
         Me.btnThunder = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbFormat = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'lvPreview
@@ -51,7 +53,7 @@ Partial Class frmUpdateDetail
         'ColumnHeader2
         '
         Me.ColumnHeader2.Text = "剧集"
-        Me.ColumnHeader2.Width = 78
+        Me.ColumnHeader2.Width = 70
         '
         'ColumnHeader3
         '
@@ -78,7 +80,7 @@ Partial Class frmUpdateDetail
         Me.cbUpdateSelect.FormattingEnabled = True
         Me.cbUpdateSelect.Location = New System.Drawing.Point(73, 5)
         Me.cbUpdateSelect.Name = "cbUpdateSelect"
-        Me.cbUpdateSelect.Size = New System.Drawing.Size(406, 20)
+        Me.cbUpdateSelect.Size = New System.Drawing.Size(285, 20)
         Me.cbUpdateSelect.TabIndex = 15
         '
         'btnThunder
@@ -93,11 +95,31 @@ Partial Class frmUpdateDetail
         Me.btnThunder.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnThunder.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(364, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 12)
+        Me.Label1.TabIndex = 19
+        Me.Label1.Text = "格式筛选"
+        '
+        'cbFormat
+        '
+        Me.cbFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbFormat.FormattingEnabled = True
+        Me.cbFormat.Location = New System.Drawing.Point(423, 5)
+        Me.cbFormat.Name = "cbFormat"
+        Me.cbFormat.Size = New System.Drawing.Size(56, 20)
+        Me.cbFormat.TabIndex = 20
+        '
         'frmUpdateDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(491, 285)
+        Me.Controls.Add(Me.cbFormat)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lvPreview)
         Me.Controls.Add(Me.btnThunder)
         Me.Controls.Add(Me.Label2)
@@ -121,4 +143,6 @@ Partial Class frmUpdateDetail
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents cbUpdateSelect As System.Windows.Forms.ComboBox
     Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents cbFormat As System.Windows.Forms.ComboBox
 End Class
