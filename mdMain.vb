@@ -2,7 +2,7 @@
 Imports Microsoft.VisualBasic.FileIO.FileSystem
 Module mdMain
 
-    Public updateList As New Collection
+    Public updateList As New List(Of String)
     Public updateCategory As New Collection
     '--------------
     Public media_name As String

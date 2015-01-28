@@ -153,8 +153,8 @@ Public Class frmMain
     Private Sub wbCheck_ProgressChanged(sender As Object, e As WebBrowserProgressChangedEventArgs) Handles wbCheck.ProgressChanged
         If e.CurrentProgress > 0 And e.MaximumProgress > 0 Then
             Try
-                pbSub.Maximum = e.MaximumProgress
-                pbSub.Value = e.CurrentProgress
+                pbSub.Maximum = e.MaximumProgress / 100
+                pbSub.Value = e.CurrentProgress / 100
             Catch ex As Exception
                 pbSub.Value = 0
             End Try

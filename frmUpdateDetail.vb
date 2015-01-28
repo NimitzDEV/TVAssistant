@@ -30,7 +30,10 @@ Public Class frmUpdateDetail
     Private Sub showList(ByVal showName As String, ByVal formatRegx As String, ByVal fresh As Boolean)
         formatList.Clear()
         lvPreview.Items.Clear()
-        For i = 1 To updateList.Count
+        Dim a As New Stopwatch
+        a.Reset()
+        a.Start()
+        For i = 0 To updateList.Count - 1
             If Split(updateList(i), "/=/")(0) = showName Then
                 If Not fresh Then
                     If Not System.Text.RegularExpressions.Regex.IsMatch(Split(updateList(i), "/=/")(1), formatRegx) Then
@@ -48,13 +51,18 @@ Public Class frmUpdateDetail
                 formatList.Add(System.IO.Path.GetExtension(Split(updateList(i), "/=/")(1)))
             End If
         Next
+        a.Stop()
+        Debug.Print(a.ElapsedMilliseconds)
         If Not fresh Then Exit Sub
         cbFormat.Items.Clear()
         cbFormat.Items.Add("全部")
         formatList = formatList.Distinct.ToList
+
         cbFormat.Items.AddRange(formatList.ToArray)
         cbFormat.SelectedIndex = 0
     End Sub
+
+
 
     Private Sub cbFormat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFormat.SelectedIndexChanged
         If cbFormat.SelectedIndex = 0 Then
