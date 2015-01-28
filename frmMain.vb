@@ -120,16 +120,19 @@ Public Class frmMain
                     If fuzzySearch(filename) Then Continue For
                 End If
                 If FileExists(media_path & "\" & filename) = False Then
-
                     '-- 名称 -- 文件名 -- 地址 -- 来源 -- SC
-                    updateList.Add(media_name & "/=/" & UrlDecode(filename) & "/=/" & gs(i) & "/=/" & site_name & "/=/" & media_siteChecker)
+                    updateList.Add(media_name & "/=/" & UrlDecode(filename) & "/=/" & gs(i))
+
+                    '& "/=/" & site_name & "/=/" & media_siteChecker)
                     Debug.Print(gs(i))
+
                     isOK = True
                 End If
             End If
         Next
         If isOK Then
             updateCategory.Add(media_name)
+            siteIndex.Add(site_name & "/=/" & site_index)
         End If
         checkNextItem()
         If gs.Length = 0 Then Exit Sub

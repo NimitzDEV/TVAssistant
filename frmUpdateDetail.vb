@@ -25,15 +25,14 @@ Public Class frmUpdateDetail
     Private Sub cbUpdateSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbUpdateSelect.SelectedIndexChanged
         lvPreview.Items.Clear()
         showList(cbUpdateSelect.Text, "", True)
+        llbSiteIndex.Text = Split(siteIndex(cbUpdateSelect.SelectedIndex + 1), "/=/")(0)
+        llbSiteIndex.Tag = Split(siteIndex(cbUpdateSelect.SelectedIndex + 1), "/=/")(1)
     End Sub
 
     Private Sub showList(ByVal showName As String, ByVal formatRegx As String, ByVal fresh As Boolean)
         formatList.Clear()
         lvPreview.Items.Clear()
-        Dim a As New Stopwatch
-        a.Reset()
-        a.Start()
-        For i = 0 To updateList.Count - 1
+        For i = 1 To updateList.Count
             If Split(updateList(i), "/=/")(0) = showName Then
                 If Not fresh Then
                     If Not System.Text.RegularExpressions.Regex.IsMatch(Split(updateList(i), "/=/")(1), formatRegx) Then
@@ -44,20 +43,17 @@ Public Class frmUpdateDetail
                 lv.SubItems(0).Text = "下载"
                 lv.SubItems.Add(getReadableName(Split(updateList(i), "/=/")(1)))
                 lv.SubItems.Add(Split(updateList(i), "/=/")(1))
-                lv.SubItems.Add(Split(updateList(i), "/=/")(3))
+                'lv.SubItems.Add(Split(updateList(i), "/=/")(3))
                 lv.Tag = Split(updateList(i), "/=/")(2)
                 lv.Checked = True
                 lvPreview.Items.Add(lv)
                 formatList.Add(System.IO.Path.GetExtension(Split(updateList(i), "/=/")(1)))
             End If
         Next
-        a.Stop()
-        Debug.Print(a.ElapsedMilliseconds)
         If Not fresh Then Exit Sub
         cbFormat.Items.Clear()
         cbFormat.Items.Add("全部")
         formatList = formatList.Distinct.ToList
-
         cbFormat.Items.AddRange(formatList.ToArray)
         cbFormat.SelectedIndex = 0
     End Sub
@@ -69,7 +65,11 @@ Public Class frmUpdateDetail
             showList(cbUpdateSelect.Text, "", False)
             Exit Sub
         End If
+
         showList(cbUpdateSelect.Text, cbFormat.Text & "$", False)
     End Sub
 
+    Private Sub llbSiteIndex_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbSiteIndex.LinkClicked
+        Process.Start(llbSiteIndex.Tag)
+    End Sub
 End Class

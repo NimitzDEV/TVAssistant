@@ -1,8 +1,8 @@
 ﻿Imports System.Web.HttpUtility
 Imports Microsoft.VisualBasic.FileIO.FileSystem
 Module mdMain
-
-    Public updateList As New List(Of String)
+    Public siteIndex As New Collection
+    Public updateList As New Collection
     Public updateCategory As New Collection
     '--------------
     Public media_name As String
@@ -26,6 +26,7 @@ Module mdMain
     Public site_xmlName As String
     Public site_scanExclude As String
     Public site_version As Integer
+    Public site_index As String
     '----------------
     Public siteCfgReader As New Xml.XmlDocument
     Dim xe As Xml.XmlElement
@@ -56,6 +57,7 @@ Module mdMain
         site_scanExclude = rootElement2.SelectSingleNode(require).SelectSingleNode("scanExclude").InnerText
         site_version = Int(xe.GetAttribute("version"))
         site_xmlName = require
+        site_index = rootElement2.SelectSingleNode(require).SelectSingleNode("index").InnerText
     End Sub
 
     Public Function getRightText(ByVal wb As WebBrowser) As String

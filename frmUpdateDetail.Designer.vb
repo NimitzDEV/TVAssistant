@@ -26,18 +26,19 @@ Partial Class frmUpdateDetail
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbUpdateSelect = New System.Windows.Forms.ComboBox()
         Me.btnThunder = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbFormat = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.llbSiteIndex = New System.Windows.Forms.LinkLabel()
         Me.SuspendLayout()
         '
         'lvPreview
         '
         Me.lvPreview.CheckBoxes = True
-        Me.lvPreview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.lvPreview.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader3})
         Me.lvPreview.FullRowSelect = True
         Me.lvPreview.Location = New System.Drawing.Point(4, 31)
         Me.lvPreview.Name = "lvPreview"
@@ -58,12 +59,7 @@ Partial Class frmUpdateDetail
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "文件名"
-        Me.ColumnHeader3.Width = 250
-        '
-        'ColumnHeader4
-        '
-        Me.ColumnHeader4.Text = "来源"
-        Me.ColumnHeader4.Width = 80
+        Me.ColumnHeader3.Width = 320
         '
         'Label2
         '
@@ -113,11 +109,32 @@ Partial Class frmUpdateDetail
         Me.cbFormat.Size = New System.Drawing.Size(56, 20)
         Me.cbFormat.TabIndex = 20
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(12, 255)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(53, 12)
+        Me.Label3.TabIndex = 21
+        Me.Label3.Text = "资源来自"
+        '
+        'llbSiteIndex
+        '
+        Me.llbSiteIndex.AutoSize = True
+        Me.llbSiteIndex.Location = New System.Drawing.Point(71, 255)
+        Me.llbSiteIndex.Name = "llbSiteIndex"
+        Me.llbSiteIndex.Size = New System.Drawing.Size(65, 12)
+        Me.llbSiteIndex.TabIndex = 22
+        Me.llbSiteIndex.TabStop = True
+        Me.llbSiteIndex.Text = "LinkLabel1"
+        '
         'frmUpdateDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(491, 285)
+        Me.Controls.Add(Me.llbSiteIndex)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cbFormat)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lvPreview)
@@ -142,7 +159,8 @@ Partial Class frmUpdateDetail
     Friend WithEvents btnThunder As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents cbUpdateSelect As System.Windows.Forms.ComboBox
-    Friend WithEvents ColumnHeader4 As System.Windows.Forms.ColumnHeader
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cbFormat As System.Windows.Forms.ComboBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents llbSiteIndex As System.Windows.Forms.LinkLabel
 End Class
