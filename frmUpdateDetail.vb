@@ -70,6 +70,7 @@ Public Class frmUpdateDetail
     End Sub
 
     Private Sub llbSiteIndex_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbSiteIndex.LinkClicked
+        If llbSiteIndex.Tag = "" Then Exit Sub
         Process.Start(llbSiteIndex.Tag)
     End Sub
 End Class
