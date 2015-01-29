@@ -1,13 +1,5 @@
 ﻿Public Class frmSettings
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
-        fuzzy_search = cbFuzzySearch.Checked
-        Me.Close()
-    End Sub
-
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Me.Close()
-    End Sub
 
     Private Sub frmSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cbFuzzySearch.Checked = fuzzy_search
@@ -20,5 +12,9 @@
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
         frmInit.ShowDialog(Me)
         frmInit.Dispose()
+    End Sub
+
+    Private Sub cbFuzzySearch_CheckedChanged(sender As Object, e As EventArgs) Handles cbFuzzySearch.CheckedChanged
+        fuzzy_search = cbFuzzySearch.Checked
     End Sub
 End Class

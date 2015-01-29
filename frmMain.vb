@@ -18,6 +18,7 @@ Public Class frmMain
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ReadSettings()
         Me.Text = Application.ProductName & " - " & Application.ProductVersion
         If FileExists(folderPath & "\tvseries.xml") = False And FileExists(folderPath & "\sites.xml") = False Then
             frmInit.ShowDialog(Me)
@@ -25,7 +26,6 @@ Public Class frmMain
         End If
         If FileExists(folderPath & "\tvseries.xml") = False Then emptyFile("tvseries.xml")
         If FileExists(folderPath & "\sites.xml") = False Then emptyFile("sites.xml")
-        ReadSettings()
     End Sub
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
