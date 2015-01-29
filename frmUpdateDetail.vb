@@ -13,7 +13,7 @@ Public Class frmUpdateDetail
         Try
             Dim thunderEng As New ThunderAgentLib.Agent
             For i = 1 To lvPreview.Items.Count
-                If lvPreview.Items(i - 1).Checked Then thunderEng.AddTask(lvPreview.Items(i - 1).Tag, "", media_path, "", "", 1, 0, -1)
+                If lvPreview.Items(i - 1).Checked Then thunderEng.AddTask(lvPreview.Items(i - 1).Tag, "", Split(siteIndex(cbUpdateSelect.SelectedIndex + 1), "/=/")(2), "", "", 1, 0, -1)
             Next
             thunderEng.CommitTasks()
         Catch ex As Exception

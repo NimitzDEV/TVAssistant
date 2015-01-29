@@ -20,6 +20,7 @@
         Dim checkCount As Integer = 0
         If Mid(txtData.Text, 1, 1) = "<" And Mid(txtData.Text, Len(txtData.Text), 1) = ">" Then checkCount += 1
         If txtData.Text.Contains("False") And txtData.Text.Contains("True") Then checkCount += 1
+        If txtData.Text.Contains("<index>") And txtData.Text.Contains("</index>") Then checkCount += 1
         If txtData.Text.Contains("<name>") And txtData.Text.Contains("</name>") Then checkCount += 1
         If txtData.Text.Contains("<scanExclude>") And txtData.Text.Contains("</scanExclude>") Then checkCount += 1
         If txtData.Text.Contains("<listlink>") And txtData.Text.Contains("</listlink>") Then checkCount += 1
@@ -34,7 +35,7 @@
         If txtData.Text.Contains("<loginFail_FalseRegex>") And txtData.Text.Contains("</loginFail_FalseRegex>") Then checkCount += 1
         If txtData.Text.Contains("<loginOK_TrueRegex>") And txtData.Text.Contains("</loginOK_TrueRegex>") Then checkCount += 1
         If txtData.Text.Contains("<loginOK_FalseRegex>") And txtData.Text.Contains("</loginOK_FalseRegex>") Then checkCount += 1
-        If checkCount <> 16 Then
+        If checkCount <> 17 Then
             MsgBox("数据不正确")
             Exit Sub
         End If
