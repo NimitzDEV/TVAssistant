@@ -33,6 +33,7 @@ Partial Class frmUpdateDetail
         Me.cbFormat = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.llbSiteIndex = New System.Windows.Forms.LinkLabel()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lvPreview
@@ -112,7 +113,7 @@ Partial Class frmUpdateDetail
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 255)
+        Me.Label3.Location = New System.Drawing.Point(12, 242)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 12)
         Me.Label3.TabIndex = 21
@@ -121,18 +122,29 @@ Partial Class frmUpdateDetail
         'llbSiteIndex
         '
         Me.llbSiteIndex.AutoSize = True
-        Me.llbSiteIndex.Location = New System.Drawing.Point(71, 255)
+        Me.llbSiteIndex.Location = New System.Drawing.Point(71, 242)
         Me.llbSiteIndex.Name = "llbSiteIndex"
         Me.llbSiteIndex.Size = New System.Drawing.Size(65, 12)
         Me.llbSiteIndex.TabIndex = 22
         Me.llbSiteIndex.TabStop = True
         Me.llbSiteIndex.Text = "LinkLabel1"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(12, 264)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(281, 12)
+        Me.Label4.TabIndex = 23
+        Me.Label4.Text = "*记得下载的路径和添加追剧时选择的路径要相同哦~"
+        '
         'frmUpdateDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(491, 285)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.llbSiteIndex)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cbFormat)
@@ -163,4 +175,5 @@ Partial Class frmUpdateDetail
     Friend WithEvents cbFormat As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents llbSiteIndex As System.Windows.Forms.LinkLabel
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class

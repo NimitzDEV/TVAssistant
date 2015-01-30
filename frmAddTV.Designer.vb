@@ -28,6 +28,7 @@ Partial Class frmAddTV
         Me.pbB = New System.Windows.Forms.ProgressBar()
         Me.gb = New System.Windows.Forms.GroupBox()
         Me.btnConfirm = New System.Windows.Forms.Button()
+        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.btnPathSel = New System.Windows.Forms.Button()
         Me.tbPath = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -44,7 +45,6 @@ Partial Class frmAddTV
         Me.cbSelecter = New System.Windows.Forms.ComboBox()
         Me.wbOperate = New System.Windows.Forms.WebBrowser()
         Me.fbdPath = New System.Windows.Forms.FolderBrowserDialog()
-        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.pnl.SuspendLayout()
         Me.gb2.SuspendLayout()
         Me.gb.SuspendLayout()
@@ -58,7 +58,7 @@ Partial Class frmAddTV
         Me.pnl.Controls.Add(Me.gb1)
         Me.pnl.Location = New System.Drawing.Point(0, 0)
         Me.pnl.Name = "pnl"
-        Me.pnl.Size = New System.Drawing.Size(260, 488)
+        Me.pnl.Size = New System.Drawing.Size(260, 574)
         Me.pnl.TabIndex = 0
         '
         'gb2
@@ -69,7 +69,7 @@ Partial Class frmAddTV
         Me.gb2.Controls.Add(Me.lbStatus)
         Me.gb2.Location = New System.Drawing.Point(12, 151)
         Me.gb2.Name = "gb2"
-        Me.gb2.Size = New System.Drawing.Size(232, 327)
+        Me.gb2.Size = New System.Drawing.Size(232, 413)
         Me.gb2.TabIndex = 3
         Me.gb2.TabStop = False
         Me.gb2.Text = "状态信息"
@@ -104,23 +104,39 @@ Partial Class frmAddTV
         Me.gb.Enabled = False
         Me.gb.Location = New System.Drawing.Point(6, 66)
         Me.gb.Name = "gb"
-        Me.gb.Size = New System.Drawing.Size(220, 252)
+        Me.gb.Size = New System.Drawing.Size(220, 335)
         Me.gb.TabIndex = 6
         Me.gb.TabStop = False
         Me.gb.Text = "追剧信息"
         '
         'btnConfirm
         '
-        Me.btnConfirm.Location = New System.Drawing.Point(3, 221)
+        Me.btnConfirm.BackColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(194, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.btnConfirm.FlatAppearance.BorderSize = 0
+        Me.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnConfirm.ForeColor = System.Drawing.Color.White
+        Me.btnConfirm.Location = New System.Drawing.Point(3, 287)
         Me.btnConfirm.Name = "btnConfirm"
-        Me.btnConfirm.Size = New System.Drawing.Size(211, 23)
+        Me.btnConfirm.Size = New System.Drawing.Size(211, 38)
         Me.btnConfirm.TabIndex = 15
         Me.btnConfirm.Text = "添加到追剧列表"
-        Me.btnConfirm.UseVisualStyleBackColor = True
+        Me.btnConfirm.UseVisualStyleBackColor = False
+        '
+        'LogInSeperator1
+        '
+        Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
+        Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
+        Me.LogInSeperator1.Location = New System.Drawing.Point(3, 261)
+        Me.LogInSeperator1.Name = "LogInSeperator1"
+        Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.LogInSeperator1.Size = New System.Drawing.Size(211, 20)
+        Me.LogInSeperator1.TabIndex = 14
+        Me.LogInSeperator1.Text = "LogInSeperator1"
+        Me.LogInSeperator1.Thickness = 1.0!
         '
         'btnPathSel
         '
-        Me.btnPathSel.Location = New System.Drawing.Point(129, 175)
+        Me.btnPathSel.Location = New System.Drawing.Point(129, 232)
         Me.btnPathSel.Name = "btnPathSel"
         Me.btnPathSel.Size = New System.Drawing.Size(85, 23)
         Me.btnPathSel.TabIndex = 13
@@ -130,17 +146,17 @@ Partial Class frmAddTV
         'tbPath
         '
         Me.tbPath.Enabled = False
-        Me.tbPath.Location = New System.Drawing.Point(10, 135)
+        Me.tbPath.Location = New System.Drawing.Point(10, 169)
         Me.tbPath.Multiline = True
         Me.tbPath.Name = "tbPath"
         Me.tbPath.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tbPath.Size = New System.Drawing.Size(204, 34)
+        Me.tbPath.Size = New System.Drawing.Size(204, 57)
         Me.tbPath.TabIndex = 12
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(8, 120)
+        Me.Label6.Location = New System.Drawing.Point(8, 154)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(125, 12)
         Me.Label6.TabIndex = 11
@@ -148,7 +164,7 @@ Partial Class frmAddTV
         '
         'tbLinkData
         '
-        Me.tbLinkData.Location = New System.Drawing.Point(65, 82)
+        Me.tbLinkData.Location = New System.Drawing.Point(65, 116)
         Me.tbLinkData.Name = "tbLinkData"
         Me.tbLinkData.Size = New System.Drawing.Size(149, 21)
         Me.tbLinkData.TabIndex = 10
@@ -156,7 +172,7 @@ Partial Class frmAddTV
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 85)
+        Me.Label5.Location = New System.Drawing.Point(6, 119)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(53, 12)
         Me.Label5.TabIndex = 9
@@ -168,7 +184,7 @@ Partial Class frmAddTV
         Me.tbResName.Multiline = True
         Me.tbResName.Name = "tbResName"
         Me.tbResName.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tbResName.Size = New System.Drawing.Size(208, 39)
+        Me.tbResName.Size = New System.Drawing.Size(208, 78)
         Me.tbResName.TabIndex = 8
         '
         'Label4
@@ -259,23 +275,11 @@ Partial Class frmAddTV
         Me.wbOperate.Size = New System.Drawing.Size(250, 250)
         Me.wbOperate.TabIndex = 1
         '
-        'LogInSeperator1
-        '
-        Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
-        Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
-        Me.LogInSeperator1.Location = New System.Drawing.Point(3, 204)
-        Me.LogInSeperator1.Name = "LogInSeperator1"
-        Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.LogInSeperator1.Size = New System.Drawing.Size(211, 20)
-        Me.LogInSeperator1.TabIndex = 14
-        Me.LogInSeperator1.Text = "LogInSeperator1"
-        Me.LogInSeperator1.Thickness = 1.0!
-        '
         'frmAddTV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(944, 534)
+        Me.ClientSize = New System.Drawing.Size(944, 604)
         Me.Controls.Add(Me.wbOperate)
         Me.Controls.Add(Me.pnl)
         Me.Name = "frmAddTV"

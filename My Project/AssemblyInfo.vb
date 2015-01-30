@@ -12,7 +12,7 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyDescription("字幕组追剧助手")> 
 <Assembly: AssemblyCompany("NimitzDEV")> 
 <Assembly: AssemblyProduct("字幕组追剧助手")> 
-<Assembly: AssemblyCopyright("Copyright ©  2015")> 
+<Assembly: AssemblyCopyright("Copyright ©  2015 nimitzdev.org")> 
 <Assembly: AssemblyTrademark("NimitzDEV")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' 方法是按如下所示使用“*”: 
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.8.0.0")> 
-<Assembly: AssemblyFileVersion("0.8.0.0")> 
+<Assembly: AssemblyVersion("0.8.0.1")> 
+<Assembly: AssemblyFileVersion("0.8.0.1")> 

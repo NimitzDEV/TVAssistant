@@ -57,8 +57,6 @@ Public Class frmUpdateDetail
         cbFormat.SelectedIndex = 0
     End Sub
 
-
-
     Private Sub cbFormat_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbFormat.SelectedIndexChanged
         If cbFormat.SelectedIndex = 0 Then
             showList(cbUpdateSelect.Text, "", False)

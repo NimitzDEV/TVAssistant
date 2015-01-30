@@ -44,7 +44,7 @@ Public Class frmAddTV
         Else
             wbOperate.Navigate(site_listlink)
         End If
-
+        wbOperate.Focus()
     End Sub
 
     Private Sub btnNavBack_Click(sender As Object, e As EventArgs) Handles btnNavBack.Click
@@ -138,7 +138,7 @@ Public Class frmAddTV
     End Function
 
     Private Sub btnPathSel_Click(sender As Object, e As EventArgs) Handles btnPathSel.Click
-        fbdPath.Description = "请选择 " & tbResName.Text & " 的储存位置" & vbCrLf & "并且每次更新该电视剧都存这个地方，这样才能准确的判断更新"
+        fbdPath.Description = "特别提醒：路径一定要选择你这部剧集打算下载的地方哦，不然会检测出错的~"
         fbdPath.ShowDialog()
         If fbdPath.SelectedPath = "" Then Exit Sub
         tbPath.Text = fbdPath.SelectedPath & "\"
