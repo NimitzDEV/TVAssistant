@@ -42,8 +42,8 @@ Module mdMain
     Public Sub getSiteInfo(ByVal require As String, ByVal rootElement2 As Xml.XmlElement)
         xe = CType(rootElement2.SelectSingleNode(require), Xml.XmlElement)
         site_fileNamePos = rootElement2.SelectSingleNode(require).SelectSingleNode("fileNamePos").InnerText
-        site_link_prefix = UrlDecode(rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText)
-        site_link_suffix = UrlDecode(rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText)
+        site_link_prefix = (rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText)
+        site_link_suffix = (rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText)
         site_loginFail_FalsePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_FalseRegex").InnerText
         site_loginFail_TruePart = rootElement2.SelectSingleNode(require).SelectSingleNode("loginFail_TrueRegex").InnerText
         site_loginLink = rootElement2.SelectSingleNode(require).SelectSingleNode("loginLink").InnerText

@@ -61,6 +61,7 @@ Public Class frmAddTV
     End Sub
 
     Private Sub summarizeData(ByVal linkdata As String, ByVal title As String)
+        Debug.Print(linkdata)
         tbPath.Text = ""
         tbLinkData.Text = ""
         tbResName.Text = ""
