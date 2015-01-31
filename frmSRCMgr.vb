@@ -44,7 +44,7 @@
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        If MsgBox("确定要删除 " & tbSiteName.Text & " 这个追剧源吗？", vbOKCancel) = MsgBoxResult.Cancel Then Exit Sub
+        If MsgBox("确定要删除 " & tbSiteName.Text & " 这个追剧源吗？" & vbCrLf & "相应的追剧也将一起被删除！", vbOKCancel) = MsgBoxResult.Cancel Then Exit Sub
         Dim nod As Xml.XmlNode = rootElement2.ChildNodes(lbAll.SelectedIndex)
         nod.ParentNode.RemoveChild(nod)
         siteInfoXML.Save(folderPath & "\sites.xml")

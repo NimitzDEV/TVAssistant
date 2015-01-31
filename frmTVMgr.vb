@@ -54,7 +54,12 @@
     End Function
 
     Private Function sitexmlDataReader(ByVal p1 As String, ByVal p2 As String) As String
-        Return rootElement2.SelectSingleNode(p1).SelectSingleNode(p2).InnerText
+        Try
+            Return rootElement2.SelectSingleNode(p1).SelectSingleNode(p2).InnerText
+        Catch ex As Exception
+            MsgBox("对应的追剧源信息已经被删除，该追剧也将会被删除")
+            delete()
+        End Try
     End Function
 
     Private Sub lbAll_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lbAll.SelectedIndexChanged
@@ -62,11 +67,14 @@
             gb.Enabled = False
             Exit Sub
         End If
-        confirmSites(sitexmlDataReader(tvxmlDataReader(lbAll.SelectedIndex, "sitechecker"), "name"))
-        tbResName.Text = tvxmlDataReader(lbAll.SelectedIndex, "name")
-        tbLinkData.Text = tvxmlDataReader(lbAll.SelectedIndex, "linkdata")
-        tbPath.Text = tvxmlDataReader(lbAll.SelectedIndex, "path")
-        gb.Enabled = True
+        Try
+            confirmSites(sitexmlDataReader(tvxmlDataReader(lbAll.SelectedIndex, "sitechecker"), "name"))
+            tbResName.Text = tvxmlDataReader(lbAll.SelectedIndex, "name")
+            tbLinkData.Text = tvxmlDataReader(lbAll.SelectedIndex, "linkdata")
+            tbPath.Text = tvxmlDataReader(lbAll.SelectedIndex, "path")
+            gb.Enabled = True
+        Catch
+        End Try
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
@@ -91,6 +99,10 @@
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
         If MsgBox("你确定要删除 " & lbAll.Items(lbAll.SelectedIndex) & " 这条追剧信息吗？", MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then Exit Sub
+        delete()
+    End Sub
+
+    Private Sub delete()
         Dim nod As Xml.XmlNode = rootElement.SelectNodes("media")(lbAll.SelectedIndex)
         nod.ParentNode.RemoveChild(nod)
         tvInfoXml.Save(folderPath & "\tvseries.xml")
