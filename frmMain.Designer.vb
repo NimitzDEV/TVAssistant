@@ -36,6 +36,7 @@ Partial Class frmMain
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
         Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
+        Me.wbCheck = New System.Windows.Forms.WebBrowser()
         Me.pnlControl.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -201,11 +202,22 @@ Partial Class frmMain
         Me.LogInSeperator1.Text = "LogInSeperator1"
         Me.LogInSeperator1.Thickness = 1.0!
         '
+        'wbCheck
+        '
+        Me.wbCheck.Location = New System.Drawing.Point(262, 21)
+        Me.wbCheck.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.wbCheck.Name = "wbCheck"
+        Me.wbCheck.ScriptErrorsSuppressed = True
+        Me.wbCheck.Size = New System.Drawing.Size(119, 47)
+        Me.wbCheck.TabIndex = 21
+        Me.wbCheck.Visible = False
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(396, 236)
+        Me.Controls.Add(Me.wbCheck)
         Me.Controls.Add(Me.pnlControl)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnSettings)
@@ -243,5 +255,6 @@ Partial Class frmMain
     Friend WithEvents btnNext As System.Windows.Forms.Button
     Friend WithEvents btnRefresh As System.Windows.Forms.Button
     Friend WithEvents lbWbStatus As System.Windows.Forms.Label
+    Friend WithEvents wbCheck As System.Windows.Forms.WebBrowser
 
 End Class
