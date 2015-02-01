@@ -23,7 +23,6 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.wbCheck = New System.Windows.Forms.WebBrowser()
         Me.btnAddRes = New System.Windows.Forms.Button()
         Me.pbSub = New System.Windows.Forms.ProgressBar()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -31,25 +30,15 @@ Partial Class frmMain
         Me.btnAbout = New System.Windows.Forms.Button()
         Me.btnSettings = New System.Windows.Forms.Button()
         Me.pnlControl = New System.Windows.Forms.Panel()
+        Me.lbWbStatus = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lbWbStatus = New System.Windows.Forms.Label()
         Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
         Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.pnlControl.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'wbCheck
-        '
-        Me.wbCheck.Location = New System.Drawing.Point(575, 376)
-        Me.wbCheck.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.wbCheck.Name = "wbCheck"
-        Me.wbCheck.ScriptErrorsSuppressed = True
-        Me.wbCheck.Size = New System.Drawing.Size(175, 44)
-        Me.wbCheck.TabIndex = 12
-        Me.wbCheck.Visible = False
         '
         'btnAddRes
         '
@@ -132,6 +121,16 @@ Partial Class frmMain
         Me.pnlControl.Size = New System.Drawing.Size(370, 28)
         Me.pnlControl.TabIndex = 20
         '
+        'lbWbStatus
+        '
+        Me.lbWbStatus.AutoSize = True
+        Me.lbWbStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(120, Byte), Integer))
+        Me.lbWbStatus.Location = New System.Drawing.Point(3, 8)
+        Me.lbWbStatus.Name = "lbWbStatus"
+        Me.lbWbStatus.Size = New System.Drawing.Size(77, 12)
+        Me.lbWbStatus.TabIndex = 2
+        Me.lbWbStatus.Text = "点击按钮开始"
+        '
         'btnRefresh
         '
         Me.btnRefresh.FlatAppearance.BorderSize = 0
@@ -172,16 +171,6 @@ Partial Class frmMain
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'lbWbStatus
-        '
-        Me.lbWbStatus.AutoSize = True
-        Me.lbWbStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(86, Byte), Integer), CType(CType(108, Byte), Integer), CType(CType(120, Byte), Integer))
-        Me.lbWbStatus.Location = New System.Drawing.Point(3, 8)
-        Me.lbWbStatus.Name = "lbWbStatus"
-        Me.lbWbStatus.Size = New System.Drawing.Size(77, 12)
-        Me.lbWbStatus.TabIndex = 2
-        Me.lbWbStatus.Text = "点击按钮开始"
         '
         'libtnStart
         '
@@ -226,7 +215,6 @@ Partial Class frmMain
         Me.Controls.Add(Me.libtnStart)
         Me.Controls.Add(Me.pbSub)
         Me.Controls.Add(Me.btnAddRes)
-        Me.Controls.Add(Me.wbCheck)
         Me.Controls.Add(Me.LogInSeperator1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -245,7 +233,6 @@ Partial Class frmMain
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents libtnStart As 字幕组追剧助手.LogInButtonWithProgress
     Friend WithEvents LogInSeperator1 As 字幕组追剧助手.LogInSeperator
-    Friend WithEvents wbCheck As System.Windows.Forms.WebBrowser
     Friend WithEvents btnAddRes As System.Windows.Forms.Button
     Friend WithEvents pbSub As System.Windows.Forms.ProgressBar
     Friend WithEvents Label1 As System.Windows.Forms.Label

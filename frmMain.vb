@@ -2,7 +2,7 @@
 Imports System.Text.RegularExpressions
 Imports System.Web.HttpUtility
 Public Class frmMain
-
+    Dim wbCheck As WebBrowser
     '-------------
     Dim tvInfoXml As New Xml.XmlDocument
     Dim rootElement As Xml.XmlElement
@@ -26,9 +26,13 @@ Public Class frmMain
         End If
         If FileExists(folderPath & "\tvseries.xml") = False Then emptyFile("tvseries.xml")
         If FileExists(folderPath & "\sites.xml") = False Then emptyFile("sites.xml")
+
     End Sub
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
+        wbCheck = New WebBrowser
+        AddHandler wbCheck.DocumentCompleted, AddressOf wbCheck_DocumentCompleted
+        AddHandler wbCheck.ProgressChanged, AddressOf wbCheck_ProgressChanged
         pnlControl.Enabled = True
         tvInfoXml.Load(folderPath & "\tvseries.xml")
         rootElement = tvInfoXml.SelectSingleNode("NimitzDEV")
@@ -45,6 +49,8 @@ Public Class frmMain
 
     Private Sub checkNextItem()
         If nowChecking = allCount Then
+            'wbCheck.Navigate("about:blank")
+            wbCheck.Dispose()
             libtnStart.Text = "再来一次"
             lbWbStatus.Text = "点击按钮再来一次"
             libtnStart.Enabled = True
@@ -70,7 +76,7 @@ Public Class frmMain
     End Sub
 
     Private Function shortString(ByVal str As String) As String
-        If Len(media_name) > 15 Then
+        If Len(str) > 15 Then
             Return Mid(str, 1, 15) & " ..."
         End If
         Return str
@@ -88,7 +94,7 @@ Public Class frmMain
         Return rootElement.SelectNodes("media")(nowChecking).SelectSingleNode(require).InnerText
     End Function
 
-    Private Sub wbCheck_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbCheck.DocumentCompleted
+    Private Sub wbCheck_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs)
         Dim isOK As Boolean = False
         Application.DoEvents()
 
@@ -153,7 +159,7 @@ Public Class frmMain
     End Sub
 
 
-    Private Sub wbCheck_ProgressChanged(sender As Object, e As WebBrowserProgressChangedEventArgs) Handles wbCheck.ProgressChanged
+    Private Sub wbCheck_ProgressChanged(sender As Object, e As WebBrowserProgressChangedEventArgs)
         If e.CurrentProgress > 0 And e.MaximumProgress > 0 Then
             Try
                 pbSub.Maximum = e.MaximumProgress / 100
@@ -176,7 +182,7 @@ Public Class frmMain
 
     Private Sub btnSettings_Click(sender As Object, e As EventArgs) Handles btnSettings.Click
         frmSettings.ShowDialog(Me)
-        frmSettings .Dispose 
+        frmSettings.Dispose()
     End Sub
 
     Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click

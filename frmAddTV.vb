@@ -94,6 +94,9 @@ Public Class frmAddTV
             Exit Sub
         End If
 
+
+
+
         If Mid(linkdata, 1, Len(site_link_prefix)) = site_link_prefix And Mid(linkdata, Len(linkdata) - Len(site_link_suffix) + 1, Len(site_link_suffix)) = site_link_suffix Then
             tbResName.Text = title
             tbLinkData.Text = Mid(linkdata, Len(site_link_prefix) + 1, Len(linkdata) - Len(site_link_suffix) - Len(site_link_prefix))
