@@ -124,10 +124,8 @@ Public Class frmMain
                 If FileExists(media_path & "\" & filename) = False Then
                     '-- 名称 -- 文件名 -- 地址 
                     updateList.Add(media_name & "/=/" & (filename) & "/=/" & UrlDecode(gs(i)))
-
                     '& "/=/" & site_name & "/=/" & media_siteChecker)
                     Debug.Print(gs(i))
-
                     isOK = True
                 End If
             End If
