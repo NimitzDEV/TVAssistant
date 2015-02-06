@@ -3,6 +3,7 @@ Imports System.Text.RegularExpressions
 Imports System.Web.HttpUtility
 Public Class frmMain
     Dim finishScan As Boolean = False
+    Dim xe As Xml.XmlElement
     '-------------
     Dim tvInfoXml As New Xml.XmlDocument
     Dim rootElement As Xml.XmlElement
@@ -84,6 +85,8 @@ Public Class frmMain
         media_name = getCurrent("name")
         media_path = getCurrent("path")
         media_siteChecker = getCurrent("sitechecker")
+        xe = CType(rootElement.SelectNodes("media")(nowChecking), Xml.XmlElement)
+        media_version = Int(xe.GetAttribute("version"))
         getSiteInfo(media_siteChecker, rootElement2)
     End Sub
 

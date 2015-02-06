@@ -9,6 +9,7 @@ Module mdMain
     Public media_linkData As String
     Public media_siteChecker As String
     Public media_path As String
+    Public media_version As Integer
     '--------------
     Public site_link_prefix As String
     Public site_link_suffix As String
@@ -41,6 +42,7 @@ Module mdMain
 
     Public Sub getSiteInfo(ByVal require As String, ByVal rootElement2 As Xml.XmlElement)
         xe = CType(rootElement2.SelectSingleNode(require), Xml.XmlElement)
+        site_version = Int(xe.GetAttribute("version"))
         site_fileNamePos = rootElement2.SelectSingleNode(require).SelectSingleNode("fileNamePos").InnerText
         site_link_prefix = (rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText)
         site_link_suffix = (rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText)
@@ -55,7 +57,6 @@ Module mdMain
         site_name = rootElement2.SelectSingleNode(require).SelectSingleNode("name").InnerText
         site_listlink = rootElement2.SelectSingleNode(require).SelectSingleNode("listlink").InnerText
         site_scanExclude = rootElement2.SelectSingleNode(require).SelectSingleNode("scanExclude").InnerText
-        site_version = Int(xe.GetAttribute("version"))
         site_xmlName = require
         site_index = rootElement2.SelectSingleNode(require).SelectSingleNode("index").InnerText
     End Sub
