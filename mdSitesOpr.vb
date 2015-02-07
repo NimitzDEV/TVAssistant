@@ -16,6 +16,7 @@
         ele.SelectSingleNode("linkdata").AppendChild(reader.CreateCDataSection(linkd))
         ele.SelectSingleNode("path").InnerText = ""
         ele.SelectSingleNode("path").AppendChild(reader.CreateCDataSection(path))
+        ele.SetAttribute("version", "1")
         reader.Save(folderPath & "\tvseries.xml")
     End Sub
     Public Sub tv_addInfo(ByVal name As String, ByVal sitec As String, ByVal linkd As String, ByVal path As String)
@@ -30,6 +31,7 @@
         mainSection.AppendChild(reader.CreateElement("sitechecker")).AppendChild(reader.CreateCDataSection(sitec))
         mainSection.AppendChild(reader.CreateElement("linkdata")).AppendChild(reader.CreateCDataSection(linkd))
         mainSection.AppendChild(reader.CreateElement("path")).AppendChild(reader.CreateCDataSection(path))
+        mainSection.SetAttribute("version", "1")
         reader.SelectSingleNode("NimitzDEV").AppendChild(mainSection)
         reader.Save(folderPath & "\tvseries.xml")
     End Sub

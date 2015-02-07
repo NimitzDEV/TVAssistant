@@ -58,7 +58,7 @@ Partial Class frmTVMgr
         Me.gb.Controls.Add(Me.Label3)
         Me.gb.Controls.Add(Me.cbSelecter)
         Me.gb.Enabled = False
-        Me.gb.Location = New System.Drawing.Point(179, 12)
+        Me.gb.Location = New System.Drawing.Point(172, 7)
         Me.gb.Name = "gb"
         Me.gb.Size = New System.Drawing.Size(304, 205)
         Me.gb.TabIndex = 5
@@ -183,7 +183,7 @@ Partial Class frmTVMgr
         '
         Me.GroupBox1.Controls.Add(Me.btnAdd)
         Me.GroupBox1.Controls.Add(Me.lbAll)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(5, 7)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(161, 205)
         Me.GroupBox1.TabIndex = 6
@@ -216,7 +216,7 @@ Partial Class frmTVMgr
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(494, 227)
+        Me.ClientSize = New System.Drawing.Size(483, 217)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gb)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

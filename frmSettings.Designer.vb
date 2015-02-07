@@ -81,7 +81,7 @@ Partial Class frmSettings
         Me.btnHelp.ForeColor = System.Drawing.Color.White
         Me.btnHelp.Location = New System.Drawing.Point(66, 91)
         Me.btnHelp.Name = "btnHelp"
-        Me.btnHelp.Size = New System.Drawing.Size(131, 29)
+        Me.btnHelp.Size = New System.Drawing.Size(131, 47)
         Me.btnHelp.TabIndex = 18
         Me.btnHelp.Text = "获取帮助"
         Me.btnHelp.UseVisualStyleBackColor = False
@@ -93,7 +93,7 @@ Partial Class frmSettings
         Me.LogInSeperator1.Location = New System.Drawing.Point(12, 65)
         Me.LogInSeperator1.Name = "LogInSeperator1"
         Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.LogInSeperator1.Size = New System.Drawing.Size(340, 20)
+        Me.LogInSeperator1.Size = New System.Drawing.Size(322, 20)
         Me.LogInSeperator1.TabIndex = 34
         Me.LogInSeperator1.Text = "LogInSeperator1"
         Me.LogInSeperator1.Thickness = 1.0!
@@ -106,7 +106,7 @@ Partial Class frmSettings
         Me.btnNew.ForeColor = System.Drawing.Color.White
         Me.btnNew.Location = New System.Drawing.Point(203, 91)
         Me.btnNew.Name = "btnNew"
-        Me.btnNew.Size = New System.Drawing.Size(131, 29)
+        Me.btnNew.Size = New System.Drawing.Size(131, 47)
         Me.btnNew.TabIndex = 35
         Me.btnNew.Text = "运行初始化向导"
         Me.btnNew.UseVisualStyleBackColor = False
@@ -115,7 +115,7 @@ Partial Class frmSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(364, 153)
+        Me.ClientSize = New System.Drawing.Size(346, 153)
         Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.btnHelp)
         Me.Controls.Add(Me.PictureBox2)

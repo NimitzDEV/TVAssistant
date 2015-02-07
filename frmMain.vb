@@ -32,6 +32,7 @@ Public Class frmMain
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
         finishScan = False
+        pnlFunctions.Enabled = False
         pnlControl.Enabled = True
         tvInfoXml.Load(folderPath & "\tvseries.xml")
         rootElement = tvInfoXml.SelectSingleNode("NimitzDEV")
@@ -53,6 +54,7 @@ Public Class frmMain
             lbWbStatus.Text = "点击按钮再来一次"
             libtnStart.Enabled = True
             pnlControl.Enabled = False
+            pnlFunctions.Enabled = True
             nowChecking = 0
             Me.Refresh()
             If updateCategory.Count = 0 Then

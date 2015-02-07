@@ -34,11 +34,13 @@ Partial Class frmMain
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.wbCheck = New System.Windows.Forms.WebBrowser()
+        Me.pnlFunctions = New System.Windows.Forms.Panel()
         Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
         Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
-        Me.wbCheck = New System.Windows.Forms.WebBrowser()
         Me.pnlControl.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlFunctions.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnAddRes
@@ -47,7 +49,7 @@ Partial Class frmMain
         Me.btnAddRes.FlatAppearance.BorderSize = 0
         Me.btnAddRes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAddRes.ForeColor = System.Drawing.Color.White
-        Me.btnAddRes.Location = New System.Drawing.Point(180, 74)
+        Me.btnAddRes.Location = New System.Drawing.Point(3, 3)
         Me.btnAddRes.Name = "btnAddRes"
         Me.btnAddRes.Size = New System.Drawing.Size(100, 33)
         Me.btnAddRes.TabIndex = 14
@@ -56,7 +58,7 @@ Partial Class frmMain
         '
         'pbSub
         '
-        Me.pbSub.Location = New System.Drawing.Point(14, 185)
+        Me.pbSub.Location = New System.Drawing.Point(5, 180)
         Me.pbSub.Name = "pbSub"
         Me.pbSub.Size = New System.Drawing.Size(370, 23)
         Me.pbSub.TabIndex = 15
@@ -66,11 +68,12 @@ Partial Class frmMain
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(178, 12)
+        Me.Label1.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label1.Location = New System.Drawing.Point(188, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(143, 12)
+        Me.Label1.Size = New System.Drawing.Size(184, 16)
         Me.Label1.TabIndex = 16
-        Me.Label1.Text = "欢迎使用字幕组追剧助手~"
+        Me.Label1.Text = "欢迎使用字幕组追剧助手"
         '
         'btnSrc
         '
@@ -78,7 +81,7 @@ Partial Class frmMain
         Me.btnSrc.FlatAppearance.BorderSize = 0
         Me.btnSrc.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSrc.ForeColor = System.Drawing.Color.White
-        Me.btnSrc.Location = New System.Drawing.Point(284, 74)
+        Me.btnSrc.Location = New System.Drawing.Point(109, 3)
         Me.btnSrc.Name = "btnSrc"
         Me.btnSrc.Size = New System.Drawing.Size(100, 33)
         Me.btnSrc.TabIndex = 17
@@ -91,7 +94,7 @@ Partial Class frmMain
         Me.btnAbout.FlatAppearance.BorderSize = 0
         Me.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAbout.ForeColor = System.Drawing.Color.White
-        Me.btnAbout.Location = New System.Drawing.Point(284, 113)
+        Me.btnAbout.Location = New System.Drawing.Point(109, 42)
         Me.btnAbout.Name = "btnAbout"
         Me.btnAbout.Size = New System.Drawing.Size(100, 26)
         Me.btnAbout.TabIndex = 18
@@ -104,7 +107,7 @@ Partial Class frmMain
         Me.btnSettings.FlatAppearance.BorderSize = 0
         Me.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSettings.ForeColor = System.Drawing.Color.White
-        Me.btnSettings.Location = New System.Drawing.Point(180, 113)
+        Me.btnSettings.Location = New System.Drawing.Point(3, 42)
         Me.btnSettings.Name = "btnSettings"
         Me.btnSettings.Size = New System.Drawing.Size(100, 26)
         Me.btnSettings.TabIndex = 19
@@ -117,7 +120,7 @@ Partial Class frmMain
         Me.pnlControl.Controls.Add(Me.btnRefresh)
         Me.pnlControl.Controls.Add(Me.btnNext)
         Me.pnlControl.Enabled = False
-        Me.pnlControl.Location = New System.Drawing.Point(14, 208)
+        Me.pnlControl.Location = New System.Drawing.Point(5, 203)
         Me.pnlControl.Name = "pnlControl"
         Me.pnlControl.Size = New System.Drawing.Size(370, 28)
         Me.pnlControl.TabIndex = 20
@@ -166,12 +169,33 @@ Partial Class frmMain
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.Image = Global.字幕组追剧助手.My.Resources.Resources.main_new
-        Me.PictureBox1.Location = New System.Drawing.Point(14, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(5, 7)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(158, 127)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'wbCheck
+        '
+        Me.wbCheck.Location = New System.Drawing.Point(25, 16)
+        Me.wbCheck.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.wbCheck.Name = "wbCheck"
+        Me.wbCheck.ScriptErrorsSuppressed = True
+        Me.wbCheck.Size = New System.Drawing.Size(119, 47)
+        Me.wbCheck.TabIndex = 21
+        Me.wbCheck.Visible = False
+        '
+        'pnlFunctions
+        '
+        Me.pnlFunctions.Controls.Add(Me.btnSrc)
+        Me.pnlFunctions.Controls.Add(Me.btnAddRes)
+        Me.pnlFunctions.Controls.Add(Me.btnAbout)
+        Me.pnlFunctions.Controls.Add(Me.btnSettings)
+        Me.pnlFunctions.Location = New System.Drawing.Point(166, 60)
+        Me.pnlFunctions.Name = "pnlFunctions"
+        Me.pnlFunctions.Size = New System.Drawing.Size(218, 82)
+        Me.pnlFunctions.TabIndex = 22
         '
         'libtnStart
         '
@@ -180,7 +204,7 @@ Partial Class frmMain
         Me.libtnStart.BorderColour = System.Drawing.Color.Transparent
         Me.libtnStart.FontColour = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.libtnStart.HoverColour = System.Drawing.Color.FromArgb(CType(CType(103, Byte), Integer), CType(CType(123, Byte), Integer), CType(CType(134, Byte), Integer))
-        Me.libtnStart.Location = New System.Drawing.Point(14, 153)
+        Me.libtnStart.Location = New System.Drawing.Point(5, 148)
         Me.libtnStart.Maximum = 100
         Me.libtnStart.Name = "libtnStart"
         Me.libtnStart.PressedColour = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(118, Byte), Integer), CType(CType(151, Byte), Integer))
@@ -194,7 +218,7 @@ Partial Class frmMain
         '
         Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
         Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
-        Me.LogInSeperator1.Location = New System.Drawing.Point(14, 136)
+        Me.LogInSeperator1.Location = New System.Drawing.Point(5, 131)
         Me.LogInSeperator1.Name = "LogInSeperator1"
         Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.LogInSeperator1.Size = New System.Drawing.Size(370, 20)
@@ -202,32 +226,19 @@ Partial Class frmMain
         Me.LogInSeperator1.Text = "LogInSeperator1"
         Me.LogInSeperator1.Thickness = 1.0!
         '
-        'wbCheck
-        '
-        Me.wbCheck.Location = New System.Drawing.Point(262, 21)
-        Me.wbCheck.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.wbCheck.Name = "wbCheck"
-        Me.wbCheck.ScriptErrorsSuppressed = True
-        Me.wbCheck.Size = New System.Drawing.Size(119, 47)
-        Me.wbCheck.TabIndex = 21
-        Me.wbCheck.Visible = False
-        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(396, 236)
-        Me.Controls.Add(Me.wbCheck)
+        Me.ClientSize = New System.Drawing.Size(381, 231)
         Me.Controls.Add(Me.pnlControl)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.btnSettings)
-        Me.Controls.Add(Me.btnAbout)
-        Me.Controls.Add(Me.btnSrc)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.libtnStart)
         Me.Controls.Add(Me.pbSub)
-        Me.Controls.Add(Me.btnAddRes)
         Me.Controls.Add(Me.LogInSeperator1)
+        Me.Controls.Add(Me.pnlFunctions)
+        Me.Controls.Add(Me.wbCheck)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -238,6 +249,7 @@ Partial Class frmMain
         Me.pnlControl.ResumeLayout(False)
         Me.pnlControl.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlFunctions.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -256,5 +268,6 @@ Partial Class frmMain
     Friend WithEvents btnRefresh As System.Windows.Forms.Button
     Friend WithEvents lbWbStatus As System.Windows.Forms.Label
     Friend WithEvents wbCheck As System.Windows.Forms.WebBrowser
+    Friend WithEvents pnlFunctions As System.Windows.Forms.Panel
 
 End Class
