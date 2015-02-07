@@ -38,6 +38,7 @@ Public Class frmAddTV
 
     Private Sub cbSelecter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSelecter.SelectedIndexChanged
         Debug.Print(cbSelecter.SelectedIndex)
+        If cbSelecter.SelectedIndex = -1 Then Exit Sub
         getSiteInfo(rootElement2.ChildNodes(cbSelecter.SelectedIndex).Name, rootElement2)
         If site_requireLogin Then
             wbOperate.Navigate(site_loginLink)
