@@ -156,6 +156,7 @@ Partial Class frmAddSrc
         Me.MinimizeBox = False
         Me.Name = "frmAddSrc"
         Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "添加追剧源"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

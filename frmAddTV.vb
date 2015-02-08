@@ -5,7 +5,8 @@ Public Class frmAddTV
     Dim allCount As Integer
     Dim siteInfoXML As New Xml.XmlDocument
     Dim rootElement2 As Xml.XmlElement
-    Dim loginIsConfirm As Boolean
+    Dim loginIsConfirm, isGet As Boolean
+    Dim oldUrl, nowUrl As String
     Private Sub frmAddTV_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Top = 0
         Me.Left = 0
@@ -38,6 +39,7 @@ Public Class frmAddTV
 
     Private Sub cbSelecter_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbSelecter.SelectedIndexChanged
         Debug.Print(cbSelecter.SelectedIndex)
+        reset()
         If cbSelecter.SelectedIndex = -1 Then Exit Sub
         getSiteInfo(rootElement2.ChildNodes(cbSelecter.SelectedIndex).Name, rootElement2)
         If site_requireLogin Then
@@ -57,18 +59,26 @@ Public Class frmAddTV
     End Sub
 
     Private Sub wbOperate_DocumentCompleted(sender As Object, e As WebBrowserDocumentCompletedEventArgs) Handles wbOperate.DocumentCompleted
+        checkUrl(wbOperate.Url.ToString, wbOperate.DocumentTitle)
         If wbOperate.ReadyState <> WebBrowserReadyState.Complete Then Exit Sub
         summarizeData(wbOperate.Url.ToString, wbOperate.DocumentTitle)
     End Sub
 
-    Private Sub summarizeData(ByVal linkdata As String, ByVal title As String)
-        Debug.Print(linkdata)
+    Private Sub reset()
+        isGet = False
         tbPath.Text = ""
         tbLinkData.Text = ""
         tbResName.Text = ""
         gb.Enabled = False
         lbStatus.Text = "未检测到可用追剧信息"
         lbStatus.ForeColor = Color.OrangeRed
+    End Sub
+
+    Private Sub summarizeData(ByVal linkdata As String, ByVal title As String)
+        Debug.Print(linkdata)
+        If linkChanged(linkdata) Then isGet = False
+        If isGet Then Exit Sub
+        reset()
         If site_requireLogin And Not loginIsConfirm Then
             lbStatus.Text = "当前追剧源需要进行登录"
             If IIf(site_loginFail_FalsePart = "", False, IsMatch(getRightText(wbOperate), site_loginFail_FalsePart)) = False And IIf(site_loginFail_TruePart = "", True, IsMatch(getRightText(wbOperate), site_loginFail_TruePart)) = True Then
@@ -91,13 +101,26 @@ Public Class frmAddTV
             End If
         End If
 
+
+
+        checkUrl(linkdata, title)
+
+
+    End Sub
+
+    Private Function linkChanged(ByVal link As String) As Boolean
+        nowUrl = link
+        If nowUrl = oldUrl Then Return False
+        oldUrl = nowUrl
+        Return True
+    End Function
+
+    Private Sub checkUrl(ByVal linkdata As String, ByVal title As String, Optional ByVal bypass As Boolean = False)
         If linkdata = site_listlink Then
             Exit Sub
         End If
-
-
-
-
+        If Not linkChanged(linkdata) And Not bypass Then Exit Sub
+        isGet = False
         If Mid(linkdata, 1, Len(site_link_prefix)) = site_link_prefix And Mid(linkdata, Len(linkdata) - Len(site_link_suffix) + 1, Len(site_link_suffix)) = site_link_suffix Then
             tbResName.Text = title
             tbLinkData.Text = Mid(linkdata, Len(site_link_prefix) + 1, Len(linkdata) - Len(site_link_suffix) - Len(site_link_prefix))
@@ -108,6 +131,8 @@ Public Class frmAddTV
                 'gbo(False)
                 lbStatus.Text = "当前剧集已经在列表中"
                 lbStatus.ForeColor = Color.Blue
+                gb.Enabled = False
+                isGet = True
                 Exit Sub
             End If
         End If
@@ -115,12 +140,14 @@ Public Class frmAddTV
         gb.Enabled = True
         lbStatus.Text = "检测到可用追剧信息"
         lbStatus.ForeColor = Color.Green
+        isGet = True
     End Sub
+
 
 
     Private Sub wbOperate_ProgressChanged(sender As Object, e As WebBrowserProgressChangedEventArgs) Handles wbOperate.ProgressChanged
         If e.CurrentProgress > 0 And e.MaximumProgress > 0 Then
-            lbb.Text = "检测中"
+            lbb.Text = "加载中"
 
             Try
                 pbB.Maximum = e.MaximumProgress
@@ -153,6 +180,6 @@ Public Class frmAddTV
         If MsgBox("确认添加追剧吗？" & vbCrLf & "点击 确认 将添加，点击 取消 可以继续修改信息", MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then Exit Sub
         tv_addInfo(tbResName.Text, site_xmlName, tbLinkData.Text, tbPath.Text)
         loader()
-        summarizeData(wbOperate.Url.ToString, tbResName.Text)
+        checkUrl(wbOperate.Url.ToString, tbResName.Text, True)
     End Sub
 End Class

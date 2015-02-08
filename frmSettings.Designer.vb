@@ -128,6 +128,7 @@ Partial Class frmSettings
         Me.MinimizeBox = False
         Me.Name = "frmSettings"
         Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "设置/帮助"
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()

@@ -28,7 +28,6 @@ Partial Class frmAddTV
         Me.pbB = New System.Windows.Forms.ProgressBar()
         Me.gb = New System.Windows.Forms.GroupBox()
         Me.btnConfirm = New System.Windows.Forms.Button()
-        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.btnPathSel = New System.Windows.Forms.Button()
         Me.tbPath = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -45,6 +44,7 @@ Partial Class frmAddTV
         Me.cbSelecter = New System.Windows.Forms.ComboBox()
         Me.wbOperate = New System.Windows.Forms.WebBrowser()
         Me.fbdPath = New System.Windows.Forms.FolderBrowserDialog()
+        Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.pnl.SuspendLayout()
         Me.gb2.SuspendLayout()
         Me.gb.SuspendLayout()
@@ -121,18 +121,6 @@ Partial Class frmAddTV
         Me.btnConfirm.TabIndex = 15
         Me.btnConfirm.Text = "添加到追剧列表"
         Me.btnConfirm.UseVisualStyleBackColor = False
-        '
-        'LogInSeperator1
-        '
-        Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
-        Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
-        Me.LogInSeperator1.Location = New System.Drawing.Point(3, 261)
-        Me.LogInSeperator1.Name = "LogInSeperator1"
-        Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
-        Me.LogInSeperator1.Size = New System.Drawing.Size(211, 20)
-        Me.LogInSeperator1.TabIndex = 14
-        Me.LogInSeperator1.Text = "LogInSeperator1"
-        Me.LogInSeperator1.Thickness = 1.0!
         '
         'btnPathSel
         '
@@ -275,6 +263,18 @@ Partial Class frmAddTV
         Me.wbOperate.Size = New System.Drawing.Size(250, 250)
         Me.wbOperate.TabIndex = 1
         '
+        'LogInSeperator1
+        '
+        Me.LogInSeperator1.Alignment = 字幕组追剧助手.LogInSeperator.Style.Horizontal
+        Me.LogInSeperator1.BackColor = System.Drawing.Color.Transparent
+        Me.LogInSeperator1.Location = New System.Drawing.Point(3, 261)
+        Me.LogInSeperator1.Name = "LogInSeperator1"
+        Me.LogInSeperator1.SeperatorColour = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
+        Me.LogInSeperator1.Size = New System.Drawing.Size(211, 20)
+        Me.LogInSeperator1.TabIndex = 14
+        Me.LogInSeperator1.Text = "LogInSeperator1"
+        Me.LogInSeperator1.Thickness = 1.0!
+        '
         'frmAddTV
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -284,6 +284,7 @@ Partial Class frmAddTV
         Me.Controls.Add(Me.pnl)
         Me.Name = "frmAddTV"
         Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Text = "追剧添加向导"
         Me.pnl.ResumeLayout(False)
         Me.gb2.ResumeLayout(False)

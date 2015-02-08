@@ -137,6 +137,7 @@ Partial Class frmAbout
         Me.MinimizeBox = False
         Me.Name = "frmAbout"
         Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "关于与更新"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

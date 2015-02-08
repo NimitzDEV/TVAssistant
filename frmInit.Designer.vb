@@ -93,7 +93,7 @@ Partial Class frmInit
         Me.Label3.ForeColor = System.Drawing.Color.Tomato
         Me.Label3.Location = New System.Drawing.Point(55, 170)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(371, 12)
+        Me.Label3.Size = New System.Drawing.Size(359, 12)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "稍后您可以从""设置/帮助""按钮中获取使用说明或者重新运行本步骤"
         '
@@ -153,7 +153,7 @@ Partial Class frmInit
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(462, 239)
+        Me.ClientSize = New System.Drawing.Size(458, 235)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnOK)
@@ -168,6 +168,7 @@ Partial Class frmInit
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmInit"
         Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "首次使用"
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
