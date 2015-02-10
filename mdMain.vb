@@ -43,6 +43,7 @@ Module mdMain
     Public Sub getSiteInfo(ByVal require As String, ByVal rootElement2 As Xml.XmlElement)
         xe = CType(rootElement2.SelectSingleNode(require), Xml.XmlElement)
         site_version = Int(xe.GetAttribute("version"))
+        If site_version <> 1 Then MsgBox("当前软件版本可能不能很好的支持当前文档配置，请更新")
         site_fileNamePos = rootElement2.SelectSingleNode(require).SelectSingleNode("fileNamePos").InnerText
         site_link_prefix = (rootElement2.SelectSingleNode(require).SelectSingleNode("link_prefix").InnerText)
         site_link_suffix = (rootElement2.SelectSingleNode(require).SelectSingleNode("link_suffix").InnerText)

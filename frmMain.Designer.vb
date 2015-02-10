@@ -69,7 +69,7 @@ Partial Class frmMain
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("宋体", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
-        Me.Label1.Location = New System.Drawing.Point(188, 16)
+        Me.Label1.Location = New System.Drawing.Point(180, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(184, 16)
         Me.Label1.TabIndex = 16

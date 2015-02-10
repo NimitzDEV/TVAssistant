@@ -36,7 +36,7 @@ Public Class frmInit
 
     Private Sub frmInit_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If FileExists(folderPath & "\tvseries.xml") Or FileExists(folderPath & "\sites.xml") Then btnCancel.Visible = True
-        Me.ShowInTaskbar = Not btnCancel.Visible
+        'Me.ShowInTaskbar = Not btnCancel.Visible
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
