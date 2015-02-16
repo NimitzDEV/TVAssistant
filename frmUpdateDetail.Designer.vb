@@ -22,18 +22,25 @@ Partial Class frmUpdateDetail
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.lvPreview = New System.Windows.Forms.ListView()
         Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbUpdateSelect = New System.Windows.Forms.ComboBox()
-        Me.btnThunder = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbFormat = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.llbSiteIndex = New System.Windows.Forms.LinkLabel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.cmsDownload = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.btnThunder = New System.Windows.Forms.Button()
+        Me.tsmiThunder = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsmiQQDownload = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsmiCopy = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cmsDownload.SuspendLayout()
         Me.SuspendLayout()
         '
         'lvPreview
@@ -79,18 +86,6 @@ Partial Class frmUpdateDetail
         Me.cbUpdateSelect.Name = "cbUpdateSelect"
         Me.cbUpdateSelect.Size = New System.Drawing.Size(285, 20)
         Me.cbUpdateSelect.TabIndex = 15
-        '
-        'btnThunder
-        '
-        Me.btnThunder.Image = Global.字幕组追剧助手.My.Resources.Resources.thunder32
-        Me.btnThunder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnThunder.Location = New System.Drawing.Point(310, 242)
-        Me.btnThunder.Name = "btnThunder"
-        Me.btnThunder.Size = New System.Drawing.Size(169, 38)
-        Me.btnThunder.TabIndex = 17
-        Me.btnThunder.Text = "使用迅雷下载以上更新"
-        Me.btnThunder.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnThunder.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -139,6 +134,49 @@ Partial Class frmUpdateDetail
         Me.Label4.TabIndex = 23
         Me.Label4.Text = "*记得下载的路径和添加追剧时选择的路径要相同哦~"
         '
+        'cmsDownload
+        '
+        Me.cmsDownload.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsmiThunder, Me.tsmiQQDownload, Me.ToolStripMenuItem1, Me.tsmiCopy})
+        Me.cmsDownload.Name = "ContextMenuStrip1"
+        Me.cmsDownload.Size = New System.Drawing.Size(153, 98)
+        '
+        'btnThunder
+        '
+        Me.btnThunder.Image = Global.字幕组追剧助手.My.Resources.Resources.download
+        Me.btnThunder.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnThunder.Location = New System.Drawing.Point(379, 242)
+        Me.btnThunder.Name = "btnThunder"
+        Me.btnThunder.Size = New System.Drawing.Size(100, 38)
+        Me.btnThunder.TabIndex = 17
+        Me.btnThunder.Text = "立即下载"
+        Me.btnThunder.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnThunder.UseVisualStyleBackColor = True
+        '
+        'tsmiThunder
+        '
+        Me.tsmiThunder.Image = Global.字幕组追剧助手.My.Resources.Resources.thunder32
+        Me.tsmiThunder.Name = "tsmiThunder"
+        Me.tsmiThunder.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiThunder.Text = "使用迅雷下载"
+        '
+        'tsmiQQDownload
+        '
+        Me.tsmiQQDownload.Image = Global.字幕组追剧助手.My.Resources.Resources.qq
+        Me.tsmiQQDownload.Name = "tsmiQQDownload"
+        Me.tsmiQQDownload.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiQQDownload.Text = "使用旋风下载"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        '
+        'tsmiCopy
+        '
+        Me.tsmiCopy.Name = "tsmiCopy"
+        Me.tsmiCopy.Size = New System.Drawing.Size(152, 22)
+        Me.tsmiCopy.Text = "复制到剪贴板"
+        '
         'frmUpdateDetail
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -160,6 +198,7 @@ Partial Class frmUpdateDetail
         Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "更新详情"
+        Me.cmsDownload.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -176,4 +215,9 @@ Partial Class frmUpdateDetail
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents llbSiteIndex As System.Windows.Forms.LinkLabel
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents cmsDownload As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents tsmiThunder As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsmiQQDownload As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents tsmiCopy As System.Windows.Forms.ToolStripMenuItem
 End Class

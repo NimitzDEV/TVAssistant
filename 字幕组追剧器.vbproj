@@ -226,6 +226,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <COMReference Include="QQIEHELPERLib">
+      <Guid>{83428D06-5608-4A6F-9328-54B01B3B6C07}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
     <COMReference Include="ThunderAgentLib">
       <Guid>{26D657AE-A466-4F44-AB1D-5CFFFADBED97}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -244,6 +253,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_big.ico" />
+    <None Include="res\download.png" />
+    <None Include="res\qq.png" />
     <None Include="res\gift_64.png" />
     <None Include="res\refresh_16.png" />
     <None Include="res\cancel_16.png" />

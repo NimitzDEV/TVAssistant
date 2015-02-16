@@ -1,6 +1,7 @@
 ﻿
 Public Class frmUpdateDetail
     Dim formatList As New List(Of String)
+    Dim clipboardStr As String
     Private Sub frmUpdateDetail_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         For i = 1 To updateCategory.Count
             cbUpdateSelect.Items.Add(updateCategory(i))
@@ -10,15 +11,7 @@ Public Class frmUpdateDetail
 
 
     Private Sub btnThunder_Click(sender As Object, e As EventArgs) Handles btnThunder.Click
-        Try
-            Dim thunderEng As New ThunderAgentLib.Agent
-            For i = 1 To lvPreview.Items.Count
-                If lvPreview.Items(i - 1).Checked Then thunderEng.AddTask(lvPreview.Items(i - 1).Tag, "", Split(siteIndex(cbUpdateSelect.SelectedIndex + 1), "/=/")(2), "", "", 1, 0, -1)
-            Next
-            thunderEng.CommitTasks()
-        Catch ex As Exception
-            MsgBox(ex.Message & " " & ex.HResult & vbCrLf & "加载迅雷下载组件错误，请确保迅雷已经正确安装")
-        End Try
+        cmsDownload.Show(btnThunder, 0, 0)
     End Sub
 
     Private Sub cbUpdateSelect_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbUpdateSelect.SelectedIndexChanged
@@ -69,5 +62,37 @@ Public Class frmUpdateDetail
     Private Sub llbSiteIndex_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llbSiteIndex.LinkClicked
         If llbSiteIndex.Tag = "" Then Exit Sub
         Process.Start(llbSiteIndex.Tag)
+    End Sub
+
+    Private Sub tsmiThunder_Click(sender As Object, e As EventArgs) Handles tsmiThunder.Click
+        Try
+            Dim thunderEng As New ThunderAgentLib.Agent
+            For i = 1 To lvPreview.Items.Count
+                If lvPreview.Items(i - 1).Checked Then thunderEng.AddTask(lvPreview.Items(i - 1).Tag, "", Split(siteIndex(cbUpdateSelect.SelectedIndex + 1), "/=/")(2), "", "", 1, 0, -1)
+            Next
+            thunderEng.CommitTasks()
+        Catch ex As Exception
+            MsgBox(ex.Message & " " & ex.HResult & vbCrLf & "加载迅雷下载组件错误，请确保迅雷已经正确安装")
+        End Try
+    End Sub
+
+    Private Sub tsmiQQDownload_Click(sender As Object, e As EventArgs) Handles tsmiQQDownload.Click
+        Try
+            Dim qqdlEng As New QQIEHELPERLib.QQRightClick
+            For i = 1 To lvPreview.Items.Count
+                If lvPreview.Items(i - 1).Checked Then qqdlEng.SendUrl(lvPreview.Items(i - 1).Tag, "", "", "")
+            Next
+            qqdlEng.CommitTasks2(1)
+        Catch ex As Exception
+            MsgBox(ex.Message & " " & ex.HResult & vbCrLf & "加载QQ旋风下载组件错误，请确保QQ旋风已经正确安装")
+        End Try
+    End Sub
+
+    Private Sub tsmiCopy_Click(sender As Object, e As EventArgs) Handles tsmiCopy.Click
+        clipboardStr = ""
+        For i = 1 To lvPreview.Items.Count
+            If lvPreview.Items(i - 1).Checked Then clipboardStr &= lvPreview.Items(i - 1).Tag & vbCrLf
+        Next
+        Clipboard.SetText(clipboardStr)
     End Sub
 End Class
