@@ -72,7 +72,7 @@ Public Class frmUpdateDetail
             Next
             thunderEng.CommitTasks()
         Catch ex As Exception
-            MsgBox(ex.Message & " " & ex.HResult & vbCrLf & "加载迅雷下载组件错误，请确保迅雷已经正确安装")
+            MsgBox("加载迅雷下载组件错误，请确保迅雷已经正确安装")
         End Try
     End Sub
 
@@ -84,7 +84,7 @@ Public Class frmUpdateDetail
             Next
             qqdlEng.CommitTasks2(1)
         Catch ex As Exception
-            MsgBox(ex.Message & " " & ex.HResult & vbCrLf & "加载QQ旋风下载组件错误，请确保QQ旋风已经正确安装")
+            MsgBox("加载QQ旋风下载组件错误，请确保QQ旋风已经正确安装")
         End Try
     End Sub
 

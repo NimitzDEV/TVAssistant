@@ -33,14 +33,14 @@ Partial Class frmMain
         Me.lbWbStatus = New System.Windows.Forms.Label()
         Me.btnRefresh = New System.Windows.Forms.Button()
         Me.btnNext = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.wbCheck = New System.Windows.Forms.WebBrowser()
         Me.pnlFunctions = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.libtnStart = New 字幕组追剧助手.LogInButtonWithProgress()
         Me.LogInSeperator1 = New 字幕组追剧助手.LogInSeperator()
         Me.pnlControl.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFunctions.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnAddRes
@@ -165,17 +165,6 @@ Partial Class frmMain
         Me.btnNext.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnNext.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.字幕组追剧助手.My.Resources.Resources.main_new
-        Me.PictureBox1.Location = New System.Drawing.Point(5, 7)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(158, 127)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'wbCheck
         '
         Me.wbCheck.Location = New System.Drawing.Point(25, 16)
@@ -196,6 +185,17 @@ Partial Class frmMain
         Me.pnlFunctions.Name = "pnlFunctions"
         Me.pnlFunctions.Size = New System.Drawing.Size(218, 82)
         Me.pnlFunctions.TabIndex = 22
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.字幕组追剧助手.My.Resources.Resources.main_new
+        Me.PictureBox1.Location = New System.Drawing.Point(5, 7)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(158, 127)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'libtnStart
         '
@@ -248,8 +248,8 @@ Partial Class frmMain
         Me.Text = "Form1"
         Me.pnlControl.ResumeLayout(False)
         Me.pnlControl.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlFunctions.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
