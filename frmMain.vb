@@ -197,4 +197,5 @@ Public Class frmMain
         wbCheck.Stop()
         checkNextItem()
     End Sub
+
 End Class
