@@ -27,7 +27,6 @@ Public Class frmMain
         End If
         If FileExists(folderPath & "\tvseries.xml") = False Then emptyFile("tvseries.xml")
         If FileExists(folderPath & "\sites.xml") = False Then emptyFile("sites.xml")
-
     End Sub
 
     Private Sub LogInButtonWithProgress1_Click(sender As Object, e As EventArgs) Handles libtnStart.Click
